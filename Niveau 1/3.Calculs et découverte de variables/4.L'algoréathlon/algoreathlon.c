@@ -10,7 +10,7 @@ void    print_nbr(int nb)
     if (nb >= 10)
         print_nbr(nb / 10);
     nb = nb % 10 + '0';
-    putchar (nb);
+    putchar(nb);
 }
 
 int     main(void)
