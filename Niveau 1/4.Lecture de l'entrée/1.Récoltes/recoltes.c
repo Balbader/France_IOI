@@ -50,4 +50,28 @@ int     main(int ac, char **av)
     (void)ac;
     recoltes(ft_atoi(av[1]));
     return (0);
-} 
+}
+
+/*
+ *NOTE: Le code ci-dessus ne passera pas l'algo de correction du site mais
+ *fonctionnera dans ton environnement local.
+ *
+ *NOTE-2: Le code ci-dessus passera l'algo de correction du site.
+ */
+/*
+#include <stdio.h>
+
+int main()
+{
+    int longeur;
+    int metre;
+    int recolte_totale;
+
+    metre = 23;
+    scanf("%d", &longeur);
+    recolte_totale = (longeur * longeur) * metre;
+    printf("%d\n", recolte_totale);
+
+    return (0);
+}
+*/
