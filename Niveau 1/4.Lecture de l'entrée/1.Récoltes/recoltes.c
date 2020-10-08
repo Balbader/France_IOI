@@ -13,7 +13,7 @@ void    print_nb(int nb)
     putchar(nb);
 }
 
-int     ft_atoi(char *str)
+int     my_atoi(char *str)
 {
     int     i;
     int     nb;
@@ -48,7 +48,7 @@ void    recoltes(int nb)
 int     main(int ac, char **av)
 {
     (void)ac;
-    recoltes(ft_atoi(av[1]));
+    recoltes(my_atoi(av[1]));
     return (0);
 }
 
