@@ -34,7 +34,6 @@ void    print_nb(int nb)
     putchar(nb);
 }
 
-
 void    print_position(int dep, int lar, int ven)
 {
     int     i;
@@ -48,7 +47,6 @@ void    print_position(int dep, int lar, int ven)
         i++;
     }
 }
-
 
 int     main(int ac, char **av)
 {
