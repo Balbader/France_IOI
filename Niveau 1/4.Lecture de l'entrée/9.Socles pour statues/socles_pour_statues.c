@@ -53,13 +53,6 @@ int     main(int ac, char **av)
     cal_socle(atoi(av[1]), atoi(av[2]));
     return (0);
 }
-
-/*
- *NOTE: Le code ci-dessus ne passera pas l'algo de correction du site mais
- *fonctionnera dans ton environnement local.
- *
- *NOTE-2: Le code ci-dessous passera l'algo de correction du site.
- */
 /*
  *NOTE: Le code ci-dessus ne passera pas l'algo de correction du site mais
  *fonctionnera dans ton environnement local.
