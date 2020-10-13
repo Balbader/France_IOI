@@ -10,7 +10,6 @@ int     main(void)
  
     scanf("%d", &pos);
     scanf("%d", &cities);
-    cit_pos = 0;
     sleep = 0;
     while (cities >= 1)
     {
