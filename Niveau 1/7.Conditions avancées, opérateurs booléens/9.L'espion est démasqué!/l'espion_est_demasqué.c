@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int    check_case(int a, int b, int c, int d, int e)
+int    ft_check_case(int a, int b, int c, int d, int e)
 {
     int     x;
 
@@ -18,7 +18,7 @@ int    check_case(int a, int b, int c, int d, int e)
     return (x);
 }
 
-void    is_guilty(int x)
+void    ft_is_guilty(int x)
 {
     if (x == 5)
         printf("Très probable\n");
@@ -45,8 +45,8 @@ int     main(void)
     while (suspect >= 1)
     {
         scanf("%d%d%d%d%d", &hgt, &age, &wgt, &horse, &hair);
-        guilty = check_case(hgt, age, wgt, horse, hair);
-        is_guilty(guilty);
+        guilty = ft_check_case(hgt, age, wgt, horse, hair);
+        ft_is_guilty(guilty);
         guilty = 0;
         suspect--;
     }
