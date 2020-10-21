@@ -1,23 +1,20 @@
-#include <unistd.h>
-// 1 + 3; 3 + (3 * 2); 
+#include <stdio.h>
 
 int     main(void)
 {
-    int     tot_stone;
-    int     height;
-    int     stone_nbr;
-    int     start;
+    int     tot;
+    int     side;
+    int     max;
 
-    tot_stone = 0;
-    height = 0;
-    stone_nbr = 1;
-    start = 3;
-    scanf("%d", &tot_stone);
-    while (tot_stone != 0)
+    scanf("%d", &tot);
+    side = 0;
+    max = 0;
+    while (tot != 0 && ((max + (side + 1) * (side + 1)) <= tot))
     {
-        stone_nbr 
-
-        height++;
+        side++;
+        max += (side * side);
     }
+    printf("%d\n", side);
+    printf("%d\n", max);
+    return (0);
 }
-
