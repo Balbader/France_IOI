@@ -11,8 +11,7 @@ int     main(void)
 
     scanf("%f%f%f", &tax, &new_tax, &price);
     reg_price = (price * 100) / (100 + tax);
-    printf("reg_price: %f\n", reg_price);
     new_price = ((reg_price / 100) * new_tax) + reg_price;
-    printf("new_price: %f\n", new_price);
+    printf("%.2f\n", new_price);
     return (0);
 }
