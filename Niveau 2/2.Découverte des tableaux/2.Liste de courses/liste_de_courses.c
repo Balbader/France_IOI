@@ -9,12 +9,12 @@ int     main(void)
     
     i = 0;
     tot_price = 0;
-    while (list_price[i])
+    while (i <= *list_price)
     {
         scanf("%d", &amount);
         tot_price += (amount * list_price[i]);
-        printf("%d\n", tot_price);
         i++;
     }
+    printf("%d\n", tot_price);
     return (0);
 }
