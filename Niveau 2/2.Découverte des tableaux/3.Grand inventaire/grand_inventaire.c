@@ -2,7 +2,12 @@
 
 int     main(void)
 {
-    int     list;
-    int     entries;
+    int     nbr;
+    int     ing;
+    int     qte;
+    int     i;
+
+    i = 1;
+    scanf("%d", &nbr); 
     return (0);
 }
