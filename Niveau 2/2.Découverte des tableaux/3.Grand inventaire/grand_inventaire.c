@@ -9,5 +9,9 @@ int     main(void)
 
     i = 1;
     scanf("%d", &nbr); 
+    while ()
+    {
+
+    }
     return (0);
 }
