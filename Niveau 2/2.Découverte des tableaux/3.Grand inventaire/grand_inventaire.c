@@ -11,7 +11,6 @@ int     main(void)
     scanf("%d", &nbr); 
     while ()
     {
-
     }
     return (0);
 }
