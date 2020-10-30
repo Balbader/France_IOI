@@ -2,15 +2,20 @@
 
 int     main(void)
 {
-    int     nbr;
-    int     ing;
+    int     nb_op;
+    int     stock[11] = {0};
+    int     num;
     int     qte;
     int     i;
 
-    i = 1;
-    scanf("%d", &nbr); 
-    while ()
+    scanf("%d", &nb_op);
+    while(nb_op > 0)
     {
+        scanf("%d %d", &num, &qte);
+        stock[num] += qte;
+        nb_op--;
     }
-    return (0);
+    for(i = 1; i < 11; i++)
+        printf("%d\n", stock[i]);
+    return(0);
 }
