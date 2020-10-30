@@ -9,13 +9,13 @@ int     main(void)
     int     i;
 
     scanf("%d", &nb_op);
-    while(nb_op > 0)
+    while (nb_op > 0)
     {
         scanf("%d %d", &num, &qte);
         stock[num] += qte;
         nb_op--;
     }
-    for(i = 1; i < 11; i++)
+    for (i = 1; i < 11; i++)
         printf("%d\n", stock[i]);
-    return(0);
+    return (0);
 }
