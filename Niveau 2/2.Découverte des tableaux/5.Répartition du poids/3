@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int     main(void)
+{
+    int     tot_cars;
+    int     cars[3000] = {0};
+    double  tot_wgt;
+    double  car_wgt;
+
+    scanf("%d", &tot_cars);
+    while (tot_cars > 0)
+    {
+        scanf("%lf", &car_wgt);
+        tot_wgt += car_wgt;
+        printf("tot_wgt: %lf", tot_wgt);
+        tot_cars--;
+    }
+    return (0);
+}
+
