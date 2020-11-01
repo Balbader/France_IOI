@@ -1,11 +1,5 @@
-#include <stdio.h>
 #include <unistd.h>
-#include <string.h>
-
-void    ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
+#include <stdio.h>
 
 void    ft_putstr(char *str)
 {
@@ -32,9 +26,9 @@ int     main(void)
         scanf("%[^\n]\n", auth_name);
         scanf("%[^\n]\n", title);
         ft_putstr(title);
-        ft_putchar('\n');
+        write(1, "\n", 1);
         ft_putstr(auth_name);
-        ft_putchar('\n');
+        write(1, "\n", 1);
     }
     return (0);
 }
