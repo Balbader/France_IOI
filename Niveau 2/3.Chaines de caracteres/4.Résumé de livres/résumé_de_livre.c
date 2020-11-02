@@ -14,8 +14,8 @@ int     main(void)
 {
     int     books;
     int     min_length;
-    char    title[1000];
-    char    summary[1000];
+    char    title[1001];
+    char    summary[1001];
     int     i;
 
     scanf("%d%d\n", &books, &min_length);
