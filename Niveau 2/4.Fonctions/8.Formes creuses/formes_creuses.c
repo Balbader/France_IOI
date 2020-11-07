@@ -47,6 +47,25 @@ void    ft_print_rec(int x, int y)
     int     i;
 
     scanf("%d%d", &x, &y);
+    if (x == 1)
+    {
+        while (y > 0)
+        {
+            ft_putchar('#');
+            y--;
+        }
+        x--;
+    }
+    if (y == 1)
+    {
+        while (x > 0)
+        {
+            ft_putchar('#');
+            ft_putchar('\n');
+            x--;
+        }
+        y--;
+    }
     for (i = 0; i < y; i++)
         ft_putchar('#');
     ft_putchar('\n');
@@ -69,33 +88,25 @@ void    ft_print_tri(int nb)
     int     y;
 
     scanf("%d", &nb);
-    y = 0;;
-    for (i = 0; i < nb; i++)
+    y = 0;
+    ft_putchar('@');
+    ft_putchar('\n');
+    for (i = 1; i < nb - 1; i++)
     {
-        while (y < nb)
+        ft_putchar('@');
+        while (y < i - 1)
         {
-            ft_putchar('@');
+            ft_putchar(' ');
             y++;
         }
         y = 0;
+        ft_putchar('@');
         ft_putchar('\n');
     }
+    while (nb > 0)
+    {
+        ft_putchar('@');
+        nb--;
+    }
+    ft_putchar('\n');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
