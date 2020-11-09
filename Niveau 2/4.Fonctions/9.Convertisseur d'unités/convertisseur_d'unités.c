@@ -13,13 +13,10 @@ int     main(void)
     p = 'p';
     l = 'l';
     f = 'f';
-
     scanf("%d", &nbr_of_entries);
-
     for (i = 0; i < nbr_of_entries; i++)
     {
         scanf("%lf %c", &imput, &type);
-        
         if (type == 'm')
         {
             double  foot;
@@ -38,7 +35,6 @@ int     main(void)
             far = (1.8 * imput) + 32;
             printf("%lf %c\n", far, f);
         }
-
         imput = 0;
         type = ' ';
     }
