@@ -16,7 +16,7 @@ int main(void)
     scanf("%d", &age);
     while (name[i])
     {
-        if (name[0])
+        if (name[0] == arr[i])
         {
             printf("%d\n", arr[i]);
             i++;
