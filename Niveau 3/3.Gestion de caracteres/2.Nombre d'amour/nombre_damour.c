@@ -86,6 +86,10 @@ int     convert_name(char *name)
         {
             love++;
         }
+        else
+        {
+            nb += nb;
+        }
         i++;
     }
     return (love);
