@@ -2,6 +2,7 @@
 
 void check_name(char *str);
 void check_age(int nb);
+
 int main(void)
 {
     char name[51];
