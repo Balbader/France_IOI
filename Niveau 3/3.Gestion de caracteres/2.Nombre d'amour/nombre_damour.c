@@ -1,7 +1,6 @@
 #include <stdio.h> 
 
 int     convert_name(char *name);
-
 int     main(void)
 {
     char    name_a[51];
@@ -16,7 +15,6 @@ int     main(void)
     printf("%d\n", love_count_b);
     return (0);
 }
-
 int     convert_name(char *name)
 {
     int     nb;
