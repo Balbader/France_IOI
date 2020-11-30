@@ -82,13 +82,9 @@ int     convert_name(char *name)
         else if (name[i] == 'Z')
             nb = 24;
         if (nb < 10)
-        {
             love++;
-        }
         else if (nb >= 10)
-        {
             convert_i(nb);
-        }
         i++;
     }
     return (love);
