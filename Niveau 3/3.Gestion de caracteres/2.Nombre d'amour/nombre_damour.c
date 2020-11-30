@@ -1,6 +1,7 @@
 #include <stdio.h> 
 
 int     convert_name(char *name);
+int     convert_i(int nb);
 
 int     main(void)
 {
@@ -21,12 +22,10 @@ int     convert_name(char *name)
 {
     int     nb;
     int     love;
-    int     total;
     int     i;
 
     i = 0;
     love = 0;
-    total = 0;
     nb = 0;
     while (name[i])
     {
@@ -86,11 +85,27 @@ int     convert_name(char *name)
         {
             love++;
         }
-        else if (name[i] >= 10)
+        else if (nb >= 10)
         {
-
+            convert_i(nb);
         }
         i++;
     }
     return (love);
+}
+
+int     convert_i(int nb)
+{
+    int     digit;
+    int     tot;
+
+    digit = 0;
+    tot = 0;
+    while(nb > 0)
+    {
+        digit = nb % 10;
+        nb = nb / 10;
+        tot += digit;
+    }
+    return (nb);
 }
