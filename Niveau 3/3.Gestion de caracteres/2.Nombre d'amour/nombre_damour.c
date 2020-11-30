@@ -86,6 +86,10 @@ int     convert_name(char *name)
         {
             love++;
         }
+        else if (name[i] >= 10)
+        {
+
+        }
         i++;
     }
     return (love);
