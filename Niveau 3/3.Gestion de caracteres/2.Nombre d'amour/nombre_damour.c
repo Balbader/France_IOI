@@ -1,14 +1,14 @@
-#include <stdio.h> 
+#include <stdio.h>
 
-int     convert_name(char *name);
-int     convert_i(int nb);
+int convert_name(char *name);
+int convert_i(int nb);
 
-int     main(void)
+int main(void)
 {
-    char    name_a[51];
-    char    name_b[51];
-    int     love_count_a;
-    int     love_count_b;
+    char name_a[51];
+    char name_b[51];
+    int love_count_a;
+    int love_count_b;
 
     scanf("%s %s", name_a, name_b);
     love_count_a = convert_name(name_a);
@@ -18,11 +18,11 @@ int     main(void)
     return (0);
 }
 
-int     convert_name(char *name)
+int convert_name(char *name)
 {
-    int     nb;
-    int     love;
-    int     i;
+    int nb;
+    int love;
+    int i;
 
     i = 0;
     love = 0;
@@ -33,7 +33,7 @@ int     convert_name(char *name)
             nb = 0;
         else if (name[i] == 'B')
             nb = 1;
-        else if (name[i] == 'c')
+        else if (name[i] == 'C')
             nb = 2;
         else if (name[i] == 'D')
             nb = 3;
@@ -68,40 +68,42 @@ int     convert_name(char *name)
         else if (name[i] == 'S')
             nb = 18;
         else if (name[i] == 'T')
-            nb = 18;
-        else if (name[i] == 'U')
             nb = 19;
-        else if (name[i] == 'V')
+        else if (name[i] == 'U')
             nb = 20;
-        else if (name[i] == 'W')
+        else if (name[i] == 'V')
             nb = 21;
-        else if (name[i] == 'X')
+        else if (name[i] == 'W')
             nb = 22;
-        else if (name[i] == 'Y')
+        else if (name[i] == 'X')
             nb = 23;
-        else if (name[i] == 'Z')
+        else if (name[i] == 'Y')
             nb = 24;
-        if (nb < 10)
-            love++;
-        else if (nb >= 10)
-            convert_i(nb);
+        else if (name[i] == 'Z')
+            nb = 25;
+        love += nb;
         i++;
     }
-    return (love);
+    if (love < 10)
+        return (love);
+    else
+        return (convert_i(love));
 }
 
-int     convert_i(int nb)
+int convert_i(int nb)
 {
-    int     digit;
-    int     tot;
+    int digit;
+    int tot;
 
     digit = 0;
     tot = 0;
-    while(nb > 0)
+    if (nb < 10)
+        return (nb);
+    while (nb > 0)
     {
         digit = nb % 10;
         nb = nb / 10;
         tot += digit;
     }
-    return (nb);
+    return (convert_i(tot));
 }
