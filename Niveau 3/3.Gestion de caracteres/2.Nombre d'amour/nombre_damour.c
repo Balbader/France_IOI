@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int convert_name(char *name);
-int convert_i(int nb);
+int     convert_name(char *name);
+int     convert_i(int nb);
 
-int main(void)
+int     main(void)
 {
-    char name_a[51];
-    char name_b[51];
-    int love_count_a;
-    int love_count_b;
+    char    name_a[51];
+    char    name_b[51];
+    int     love_count_a;
+    int     love_count_b;
 
     scanf("%s %s", name_a, name_b);
     love_count_a = convert_name(name_a);
@@ -18,11 +18,11 @@ int main(void)
     return (0);
 }
 
-int convert_name(char *name)
+int     convert_name(char *name)
 {
-    int nb;
-    int love;
-    int i;
+    int     nb;
+    int     love;
+    int     i;
 
     i = 0;
     love = 0;
@@ -90,10 +90,10 @@ int convert_name(char *name)
         return (convert_i(love));
 }
 
-int convert_i(int nb)
+int     convert_i(int nb)
 {
-    int digit;
-    int tot;
+    int     digit;
+    int     tot;
 
     digit = 0;
     tot = 0;
