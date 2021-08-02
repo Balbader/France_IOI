@@ -1,30 +1,14 @@
-#include <unistd.h>
+#include <stdio.h>
 
-void    putchar(char c)
-{
-    write(1, &c, 1);
-}
-
-void    print_nbr(int nb)
-{
-    if (nb >= 10)
-        print_nbr(nb / 10);
-    nb = nb % 10 + '0';
-    putchar(nb);
-}
 int     main(void)
 {
-    int     i;
-    int     bn_tot;
+    int i = 1;
 
-    i = 1;
-    bn_tot = 0;
-    while (i <= 50)
+    while (i < 51)
     {
-        bn_tot += i;
-        print_nbr(bn_tot);
-        putchar ('\n');
+        printf("%d\n", (i * (i + 1) / 2));
         i++;
     }
     return (0);
 }
+
