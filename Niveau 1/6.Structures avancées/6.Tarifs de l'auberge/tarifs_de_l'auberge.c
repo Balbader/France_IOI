@@ -1,31 +1,28 @@
 #include <stdio.h>
 
-int     main(void)
+int main(void)
 {
-    int     age;
-    int     wgt;
-    int     price;
+    int age;
+    int weight;
+    int price;
 
-    scanf("%d%d", &age, &wgt);
-    price = 30;
-    if (((age >= 10 && age < 60) || age > 60) && wgt < 20)
-        printf("%d\n", price);
-    if (((age >= 10 && age < 60) || age > 60) && wgt >= 20)
-    {
-        price = 40;
-        printf("%d\n", price);
-    }
+    scanf("%d %d", &age, &weight);
     if (age == 60)
     {
         price = 0;
-        printf("%d\n", price);
     }
-    if (age < 10)
+    else if (age < 10)
     {
         price = 5;
-        printf("%d\n", price);
     }
+    else if (age >= 10 && age <= 59 && weight >= 20 || age > 60 && weight >= 20)
+    {
+        price = 40;
+    }
+    else
+    {
+        price = 30;
+    }
+    printf("%d\n", price);
     return (0);
 }
-
-
