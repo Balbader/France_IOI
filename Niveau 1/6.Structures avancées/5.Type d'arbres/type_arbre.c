@@ -1,8 +1,8 @@
 #include <unistd.h>
 
-void    ft_putstr(char *str)
+void ft_putstr(char *str)
 {
-    int     i;
+    int i;
 
     i = 0;
     while (str[i])
@@ -12,11 +12,11 @@ void    ft_putstr(char *str)
     }
 }
 
-int     ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-    int     i;
-    int     nb;
-    int     sign;
+    int i;
+    int nb;
+    int sign;
 
     i = 0;
     nb = 0;
@@ -33,7 +33,7 @@ int     ft_atoi(char *str)
     return (sign * nb);
 }
 
-void    check_type(int ht, int nbr)
+void check_type(int ht, int nbr)
 {
     if (ht <= 5 && nbr >= 8)
         ft_putstr("Tinuviel\n");
@@ -45,7 +45,7 @@ void    check_type(int ht, int nbr)
         ft_putstr("Dorthonion\n");
 }
 
-int     main(int ac, char **av)
+int main(int ac, char **av)
 {
     (void)ac;
     check_type(ft_atoi(av[1]), ft_atoi(av[2]));
@@ -57,7 +57,6 @@ int     main(int ac, char **av)
  *
  *NOTE-2: Le code ci-dessous passera l'algo de correction du site.
  */
-/*
 #include <stdio.h>
 
 int main()
@@ -77,5 +76,3 @@ int main()
         printf("Dorthonion\n");
     return (0);
 }
-*/
-
