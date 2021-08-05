@@ -1,10 +1,10 @@
 #include <unistd.h>
 
-int     ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-    int     i;
-    int     nb;
-    int     sign;
+    int i;
+    int nb;
+    int sign;
 
     i = 0;
     nb = 0;
@@ -21,7 +21,7 @@ int     ft_atoi(char *str)
     return (sign * nb);
 }
 
-void    ft_check_month(int nb)
+void ft_check_month(int nb)
 {
     if (nb == 11)
     {
@@ -40,7 +40,7 @@ void    ft_check_month(int nb)
     }
 }
 
-int     main(int ac, char **av)
+int main(int ac, char **av)
 {
     (void)ac;
     ft_check_month(ft_atoi(av[1]));
@@ -69,4 +69,35 @@ int main(void)
         printf("%d\n", 31);
     return (0);
 }
+
+#include <stdio.h>
+
+int     main(void)
+{
+    int nbr;
+
+    scanf("%d", &nbr);
+    switch(nbr)
+    {
+        case 1:
+        case 2:
+        case 3:
+        case 7:
+        case 8:
+        case 9:
+            printf("%d\n", 30);
+            break;
+        case 4:
+        case 5:
+        case 6:
+        case 10:
+            printf("%d\n", 31);
+            break;
+        case (11):
+            printf("%d\n", 29);
+            break;
+    }
+    return (0);
+}
+
 */
