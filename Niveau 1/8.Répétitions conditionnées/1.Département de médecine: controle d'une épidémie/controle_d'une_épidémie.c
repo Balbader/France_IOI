@@ -1,16 +1,16 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void    ft_putchar(char c)
+void ft_putchar(char c)
 {
     write(1, &c, 1);
 }
 
-int     ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-    int     i;
-    int     nb;
-    int     sign;
+    int i;
+    int nb;
+    int sign;
 
     i = 0;
     nb = 0;
@@ -27,13 +27,13 @@ int     ft_atoi(char *str)
     return (nb * sign);
 }
 
-void    ft_putnbr(int nb)
+void ft_putnbr(int nb)
 {
-    if (nb ==  -2147483648)
+    if (nb == -2147483648)
     {
         ft_putnbr(-214748364);
         ft_putnbr(8);
-        return ;
+        return;
     }
     if (nb < 0)
     {
@@ -46,10 +46,10 @@ void    ft_putnbr(int nb)
     ft_putchar(nb);
 }
 
-void    ft_check_breakpoint(int pop)
+void ft_check_breakpoint(int pop)
 {
-    int     sick_nbr;
-    int     day_count;
+    int sick_nbr;
+    int day_count;
 
     sick_nbr = 1;
     day_count = 1;
@@ -61,7 +61,7 @@ void    ft_check_breakpoint(int pop)
     printf("%d\n", day_count);
 }
 
-int     main(int ac, char **av)
+int main(int ac, char **av)
 {
     (void)ac;
     ft_check_breakpoint(ft_atoi(av[1]));
@@ -79,19 +79,17 @@ int     main(int ac, char **av)
 
 int main(void)
 {
-    int pop_tot_ville;
-    int contamine;
-    int jour_de_contamination;
+    int pop;
+    int days = 1;
+    int dead = 1;
 
-    scanf("%d", &pop_tot_ville);
-    contamine = 1;
-    jour_de_contamination = 1;
-    while (contamine < pop_tot_ville)
+    scanf("%d", &pop);
+    while (dead < pop)
     {
-        contamine = contamine + (contamine * 2);
-        jour_de_contamination++;
+        dead += (dead * 2);
+        days += 1;
     }
-    printf("\n%d\n", jour_de_contamination);
+    printf("%d\n", days);
     return (0);
 }
 */
