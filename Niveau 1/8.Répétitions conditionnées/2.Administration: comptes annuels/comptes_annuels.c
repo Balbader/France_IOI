@@ -1,10 +1,10 @@
 #include <unistd.h>
 
-int     ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-    int     i;
-    int     nb;
-    int     sign;
+    int i;
+    int nb;
+    int sign;
 
     i = 0;
     nb = 0;
@@ -21,13 +21,13 @@ int     ft_atoi(char *str)
     return (nb * sign);
 }
 
-void    ft_putnbr(int nb)
+void ft_putnbr(int nb)
 {
     if (nb == -2147483648)
     {
         ft_putnbr(-214748364);
         ft_putnbr(8);
-        return ;
+        return;
     }
     if (nb < 0)
     {
@@ -40,11 +40,11 @@ void    ft_putnbr(int nb)
     write(1, &nb, 1);
 }
 
-int     main(int ac, char **av)
+int main(int ac, char **av)
 {
     (void)ac;
-    int     i;
-    int     tot;
+    int i;
+    int tot;
 
     i = 1;
     tot = 0;
@@ -82,4 +82,33 @@ int     main(void)
        printf("%d\n", tot + 1);
     return (0);
 }
+
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 1000000000;
+    int nbr;
+    int tmp;
+    scanf("%d", &nbr);
+    tmp = nbr;
+    if (nbr == -1)
+        printf("%d\n", 0);
+    else
+    {
+        while (i > 0)
+        {
+            scanf("%d", &nbr);
+            if (nbr == -1)
+            {
+                printf("%d\n", tmp);
+                break ;
+            }
+            tmp += nbr;
+            i--;
+        }
+    }
+    return (0);
+}
+
 */
