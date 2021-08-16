@@ -29,3 +29,35 @@ int     main(void)
     }
     return (0);
 }
+
+/*
+int main(void)
+{
+    double qnt;
+    double bag;
+    int price;
+    int final_price;
+
+    scanf("%lf", &qnt);
+
+    bag = 60.0;
+    price = 45.0;
+
+    if (qnt <= bag)
+    {
+        if (qnt == 0.0)
+        {
+            printf("%d\n", 0);
+        }
+        else
+            printf("%d\n", price);
+    }
+    else
+    {
+        final_price = (ceil(qnt / bag)) * price;
+        printf("%d\n", final_price);
+    }
+    return (0);
+}
+
+ */
