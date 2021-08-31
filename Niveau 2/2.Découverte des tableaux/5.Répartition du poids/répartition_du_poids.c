@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-int     main(void)
+int main(void)
 {
-    int     tot_cars;
-    double  cars[3000] = {0};
-    double  tot_wgt;
-    double  car_wgt;
-    double  even;
-    int     i;
+    int tot_cars;
+    double cars[3000] = {0};
+    double tot_wgt;
+    double car_wgt;
+    double even;
+    int i;
 
     scanf("%d", &tot_cars);
     tot_wgt = 0.0;
@@ -26,3 +26,37 @@ int     main(void)
     return (0);
 }
 
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    int nbr_char;
+    int i = 0;
+    int j = 0;
+    float weight = 0.0;
+    float arr[3000] = {0.0};
+    float tot_weight = 0.0;
+    float even_weight = 0.0;
+
+    scanf("%d", &nbr_char);
+    while (i < nbr_char)
+    {
+        scanf("%f", &weight);
+        arr[i] += weight;
+        tot_weight += weight;
+        i++;
+    }
+
+    even_weight = tot_weight / nbr_char;
+
+    while (j < nbr_char)
+    {
+        arr[j] -= even_weight;
+        arr[j] *= -1;
+        printf("%f\n", arr[j]);
+        j++;
+    }
+    return (0);
+}
+*/
