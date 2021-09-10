@@ -1,9 +1,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void    ft_putstr(char *str)
+void ft_putstr(char *str)
 {
-    int     i;
+    int i;
 
     i = 0;
     while (str[i])
@@ -13,12 +13,12 @@ void    ft_putstr(char *str)
     }
 }
 
-int     main(void)
+int main(void)
 {
-    int     books;
-    int     i;
-    char    title[201];
-    char    auth_name[201];
+    int books;
+    int i;
+    char title[201];
+    char auth_name[201];
 
     books = 6;
     for (i = 0; i < books; i++)
@@ -32,3 +32,26 @@ int     main(void)
     }
     return (0);
 }
+
+/*
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char title[201];
+    char auth[201];
+    int i = 0;
+    while (i < 6)
+    {
+        scanf("%[^\n]\n", auth);
+        scanf("%[^\n]\n", title);
+        printf("%s\n", title);
+        printf("%s\n", auth);
+        i++;
+    }
+    return (0);
+}
+
+*/
