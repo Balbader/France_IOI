@@ -37,11 +37,11 @@ int     main(void)
 {
     char    name[51];
     scanf("%s", name);
-    if (name[0] >= 'A' && name[0] <= 'F')
+    if (name[0] <= 'F')
     {
         ft_putchar('1');
     }
-    else if (name[0] >= 'G' && name[0] <= 'P')
+    else if (name[0] <= 'P')
     {
         ft_putchar('2');
     }
