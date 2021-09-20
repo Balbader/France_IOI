@@ -81,7 +81,7 @@ void    print_char(int nbr, char c)
     while (i < nbr)
     {
         printf("%c", c);
-        i++;
+    i++;
     }
 }
 
