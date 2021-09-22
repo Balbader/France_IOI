@@ -42,4 +42,12 @@ Use of `<>` for libraries<br>
 Use of `""` for files<br>
 
 
+### Defining symbols and macros
+
+`#define` :
+
+```c
+#define MAX_PLAYERS  (200 * 1000)
+#define INIFINITY (1000 * 1000 * 1000)
+```
 
