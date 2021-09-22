@@ -36,4 +36,10 @@ The `#include` can be written as follow:
 . `#include "name of the file to be included"`<br>
 
 
+NOTE: 
+
+Use of `<>` for libraries<br>
+Use of `""` for files<br>
+
+
 
