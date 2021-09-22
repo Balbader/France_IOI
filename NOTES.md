@@ -66,3 +66,5 @@ will become:
 ```c
 double average_absent_players = (double) absent_players / (200 * 1000);
 ```
+NOTE: without the `(  )` the result would be different.
+
