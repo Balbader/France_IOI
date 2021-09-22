@@ -57,6 +57,7 @@ Use of `""` for files<br>
 ```
 The use of `(  )` in the definition of macros can be necessary<br>
 on the position of the macro.<br>
+
 The following instruction:
 ```c
 double average_absent_players = (double) absent_players / MAX_PLAYERS;
