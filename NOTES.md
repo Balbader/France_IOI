@@ -28,4 +28,12 @@ The preprocessor will run 2 tasks:<br>
 `#include <stdio.h>`
 
 
+### Including Files
+
+The `#include` can be written as follow:
+
+. `#include <name of the library to be included>`<br>
+. `#include "name of the file to be included"`<br>
+
+
 
