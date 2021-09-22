@@ -41,6 +41,11 @@ NOTE:
 Use of `<>` for libraries<br>
 Use of `""` for files<br>
 
+```c
+#include <stdio.h>
+#include "lib/includes/libftstruct.h"
+```
+
 
 ### Defining symbols and macros
 
