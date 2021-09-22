@@ -55,7 +55,7 @@ Use of `""` for files<br>
 #define MAX_PLAYERS  (200 * 1000)
 #define INIFINITY (1000 * 1000 * 1000)
 ```
-The use of `(  )` in the definition of macros can be necessary<br>
+The use of `(  )` in the definition of macros can be necessary 
 on the position of the macro.<br>
 
 The following instruction:
