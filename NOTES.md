@@ -3,6 +3,7 @@
 ### Ternary Operators
 
 Takes 3 conditions: 
+
 . The initial condition<br>
 . The result in case it is true<br>
 . The result in case it is false<br>
