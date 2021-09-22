@@ -3,9 +3,9 @@
 ### Ternary Operators
 
 Takes 3 conditions: 
-. The initial condition
-. The result in case it is true
-. The result in case it is false
+. The initial condition<br>
+. The result in case it is true<br>
+. The result in case it is false<br>
 
 ```c
 int main()
