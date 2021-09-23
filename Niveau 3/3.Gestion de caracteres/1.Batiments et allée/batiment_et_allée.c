@@ -130,3 +130,50 @@ void check_age(int age)
     else if (age == 26)
         printf("Z\n");
 }
+
+/*
+#include <stdio.h>
+
+int     main(void)
+{
+    char    name[51];
+    int     age;
+    int     i;
+    int     temp;
+    char    res;
+
+    scanf("%[^\n]\n", name);
+    scanf("%d", &age);
+
+    char    alph[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    temp = 0;
+    i = 0;
+    while (alph[i])
+    {
+        if (name[0] == alph[i])
+        {
+            temp = i + 1;
+        }
+        i++;
+    }
+    res = alph[age - 1];
+    printf("%d%c\n", temp, res);
+    return (0);
+}
+*/
+
+/*
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+   char nomAuteur[51];
+   int ageFils;
+   scanf("%[^\n]\n", nomAuteur);
+   scanf("%d", &ageFils);
+   int batiment = nomAuteur[0] - 'A' + 1;
+   char allee = ageFils - 1 + 'A';
+   printf("%d%c", batiment, allee);
+}
+*/
