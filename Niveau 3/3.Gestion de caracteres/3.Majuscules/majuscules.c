@@ -28,7 +28,6 @@ void to_upper(char *str)
 /*
 #include <stdio.h>
 
-
 int     main(void)
 {
     char    str[10001];
@@ -52,5 +51,22 @@ int     main(void)
         i++;
     }
     return (0);
+}
+*/
+
+/*
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int main()
+{
+   char texte[10 * 1000 + 1];
+   scanf("%[^\n]\n", texte);
+   int longueur = strlen(texte);
+   for (int iLettre = 0; iLettre < longueur; iLettre = iLettre + 1)
+   {
+      texte[iLettre] = toupper(texte[iLettre]);
+   }
+   printf("%s\n",texte);
 }
 */
