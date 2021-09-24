@@ -1,26 +1,58 @@
 #include <stdio.h>
 
-char    *remove_white_spaces(char*);
-char    *ft_strcpy(char*, char*);
+char *remove_white_spaces(char *);
+char *ft_strcpy(char *, char *);
+char max_char(char *);
+char *to_lower(char *);
 
-int     main(void)
+int main(void)
 {
-    char    str[10001] = "Le francais est une langue romane de la famille des langues indo europeennes";
-    char    letters[10001];
-    int     i;
+    char str[10001] = "Le francais est une langue romane de la famille des langues indo europeennes";
+    char letters[10001];
+    char res;
+    int i;
 
     /*scanf("%s", str);*/
     ft_strcpy(letters, str);
+    to_lower(letters);
     remove_white_spaces(letters);
+    res = max_char(letters);
 
-    printf("%s", letters);
+    printf("res: %c\n", res);
     return (0);
 }
 
-char    *remove_white_spaces(char *str)
+char *ft_strcpy(char *dest, char *src)
 {
-    int     i;
-    int     j;
+    int i;
+    i = 0;
+    while (src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    return (dest);
+}
+
+char *to_lower(char *str)
+{
+    int i;
+    i = 0;
+    while (str[i])
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] += 32;
+        }
+        i++;
+    }
+    return (str);
+}
+
+char *remove_white_spaces(char *str)
+{
+    int i;
+    int j;
 
     i = 0;
     j = 0;
@@ -34,16 +66,25 @@ char    *remove_white_spaces(char *str)
     return str;
 }
 
-char    *ft_strcpy(char *dest, char *src)
+char max_char(char *str)
 {
-    int     i;
+    int max;
+    int arr[255] = {0};
+    int i;
+    int index;
+
+    max = arr[0];
     i = 0;
-    while (src[i])
+    index = 0;
+    while (str[i])
     {
-        dest[i] = src[i];
+        if (arr[str[i]] > max)
+        {
+            max = arr[str[i]];
+            printf("max: %c\n", max);
+            index = i;
+        }
         i++;
     }
-    return (dest);
+    return (str[index]);
 }
-
-
