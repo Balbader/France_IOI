@@ -1,56 +1,35 @@
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-char *remove_white_spaces(char *);
-char *ft_strcpy(char *, char *);
-char max_char(char *);
-char *to_upper(char *);
+void to_upper(char *);
+void remove_white_space(char *);
 int ft_strlen(char *);
+void freq_counter(char *);
 
 int main(void)
 {
-    char str[10001];
-    char letters[10001];
-    char res;
-
-    scanf("%s", str);
-
-    ft_strcpy(letters, str);
-    to_upper(letters);
-    remove_white_spaces(letters);
-    res = max_char(letters);
-
-    printf("%c\n", res);
+    char str[101];
+    scanf("%[^\n]", str);
+    to_upper(str);
+    remove_white_space(str);
+    freq_counter(str);
     return (0);
 }
 
-char *ft_strcpy(char *dest, char *src)
-{
-    int i;
-    i = 0;
-    while (src[i])
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    return (dest);
-}
-
-char *to_upper(char *str)
+void to_upper(char *str)
 {
     int i;
     i = 0;
     while (str[i])
     {
         if (str[i] >= 'a' && str[i] <= 'z')
-        {
             str[i] -= 32;
-        }
         i++;
     }
-    return (str);
 }
 
-char *remove_white_spaces(char *str)
+void remove_white_space(char *str)
 {
     int i;
     int j;
@@ -64,36 +43,6 @@ char *remove_white_spaces(char *str)
         i++;
     }
     str[j] = '\0';
-    return str;
-}
-
-char max_char(char *str)
-{
-    int count[256] = {0};
-    int max;
-    char letter;
-    int i;
-
-    max = 0;
-    i = 0;
-
-    while (i < ft_strlen(str))
-    {
-        count[str[i]]++;
-        i++;
-    }
-
-    i = 0;
-    while (i < ft_strlen(str))
-    {
-        if (count[str[i]] > max)
-        {
-            max = count[str[i]];
-            letter = str[i];
-        }
-        i++;
-    }
-    return (letter);
 }
 
 int ft_strlen(char *str)
@@ -101,8 +50,59 @@ int ft_strlen(char *str)
     int i;
     i = 0;
     while (str[i])
+        i++;
+    return (i);
+}
+
+void freq_counter(char *str)
+{
+    int freq[256];
+    int i;
+    int j;
+    int len;
+    int count;
+    int temp;
+    char res;
+
+    len = ft_strlen(str);
+    i = 0;
+    while (i < len)
     {
+        freq[i] = -1;
         i++;
     }
-    return (i);
+
+    i = 0;
+    while (i < len)
+    {
+        count = 1;
+        j = i + 1;
+        while (j < len)
+        {
+            if (str[i] == str[j])
+            {
+                count++;
+                freq[j] = 0;
+            }
+            j++;
+        }
+        if (freq[i] != 0)
+            freq[i] = count;
+        i++;
+    }
+    i = 0;
+    temp = 0;
+    while (i < len)
+    {
+        if (freq[i] != 0)
+        {
+            if (freq[i] > temp)
+            {
+                temp = freq[i];
+                res = str[i];
+            }
+        }
+        i++;
+    }
+    printf("%c\n", res);
 }
