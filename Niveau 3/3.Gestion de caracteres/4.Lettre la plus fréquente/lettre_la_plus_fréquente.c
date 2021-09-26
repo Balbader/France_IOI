@@ -9,7 +9,7 @@ void freq_counter(char *);
 
 int main(void)
 {
-    char str[101];
+    char str[10001];
     scanf("%[^\n]", str);
     to_upper(str);
     remove_white_space(str);
@@ -56,7 +56,7 @@ int ft_strlen(char *str)
 
 void freq_counter(char *str)
 {
-    int freq[256];
+    int freq[10001];
     int i;
     int j;
     int len;
