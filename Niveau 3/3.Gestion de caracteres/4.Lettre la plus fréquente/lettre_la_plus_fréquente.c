@@ -30,7 +30,7 @@ void freq_counter(char *str)
 {
     char alphabet[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     char res;
-    int letter_counter[27] = {0};
+    int letter_counter[26] = {0};
     int temp;
     int i;
     int j;
