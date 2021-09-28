@@ -1,16 +1,15 @@
 #include <stdio.h>
 
+char *remove_white_spaces(char *);
+char to_lower(char *);
+void freq_counter(char *);
+int count_letter(char *);
+int ft_strlen(char *);
 
-char    *remove_white_spaces(char*);
-char    to_lower(char*);
-void    freq_counter(char*);
-int     count_letter(char*);
-int     ft_strlen(char*);
-
-int     main(void)
+int main(void)
 {
-    char    str[10001];
-    int     i;
+    char str[10001];
+    int i;
 
     scanf("%[^\n]", str);
     remove_white_spaces(str);
@@ -36,9 +35,9 @@ char *remove_white_spaces(char *str)
     return str;
 }
 
-char    to_lower(char *str)
+char to_lower(char *str)
 {
-    int     i;
+    int i;
     i = 0;
     while (str[i])
     {
@@ -49,14 +48,14 @@ char    to_lower(char *str)
     return (*str);
 }
 
-void    freq_counter(char *str)
+void freq_counter(char *str)
 {
-    char    arr[26] = "abcdefghijklmnopqrstuvwxyz";
-    int     counts[26] = {0};
-    int     i;
-    int     j;
-    int     tot_letter;
-    double  res;
+    char arr[26] = "abcdefghijklmnopqrstuvwxyz";
+    int counts[26] = {0};
+    int i;
+    int j;
+    int tot_letter;
+    double res;
 
     tot_letter = count_letter(str);
     res = 0.0;
@@ -83,9 +82,9 @@ void    freq_counter(char *str)
     }
 }
 
-int     ft_strlen(char *str)
+int ft_strlen(char *str)
 {
-    int     i;
+    int i;
     i = 0;
     while (str[i])
     {
@@ -94,10 +93,10 @@ int     ft_strlen(char *str)
     return (i);
 }
 
-int     count_letter(char *str)
+int count_letter(char *str)
 {
-    int     count;
-    int     i;
+    int count;
+    int i;
 
     count = 0;
     i = 0;
@@ -110,3 +109,34 @@ int     count_letter(char *str)
     return (count);
 }
 
+/*
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main()
+{
+   char texte[10001];
+   scanf("%[^\n]\n", texte);
+   int nbApparitions[26] = {0};
+   int nbLettres = 0;
+   int longueurTexte = strlen(texte);
+   for (int iCar = 0; iCar < longueurTexte; iCar = iCar + 1)
+   {
+      char caractere = texte[iCar];
+      if (isalpha(caractere))
+      {
+         nbLettres = nbLettres + 1;
+         if (islower(caractere))
+         {
+            caractere = toupper(caractere);
+         }
+         int num = caractere - 'A';
+         nbApparitions[num] = nbApparitions[num] + 1;
+      }
+   }
+   for (int idLettre = 0; idLettre < 26; idLettre = idLettre + 1)
+   {
+      printf("%lf\n", (double)(nbApparitions[idLettre]) / nbLettres);
+   }
+}
+*/
