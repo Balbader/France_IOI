@@ -31,9 +31,8 @@ int     main(void)
         res = ft_strcmp(temp, titles[i]);
         if (res < 0)
         {
-            printf("%s\n", titles[i]);
             strcpy(temp, titles[i]);
-            i++;
+            printf("%s\n", temp);
         }
         i++;
     }
