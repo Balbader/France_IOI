@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-int     ft_strcmp(char*, char*);
+int ft_strcmp(char *, char *);
 
-int     main(void)
+int main(void)
 {
-    int     tot_books;
-    char    temp[101];
-    int     i;
-    int     res;
+    int tot_books;
+    char temp[101];
+    int i;
+    int res;
 
     scanf("%d\n", &tot_books);
 
-    char    titles[tot_books][101];
+    char titles[tot_books][101];
 
     i = 0;
     while (i < tot_books)
@@ -39,13 +39,33 @@ int     main(void)
     return (0);
 }
 
-
-int     ft_strcmp(char *s1, char *s2)
+int ft_strcmp(char *s1, char *s2)
 {
-    int     i;
+    int i;
     i = 0;
     while (s1[i] == s2[i] && s1[i] && s2[i])
         i++;
     return (s1[i] - s2[i]);
 }
 
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+   int nbLivres;
+   scanf("%d\n", &nbLivres);
+   char plusGrandTitre[101] = "";
+   for (int idLivre = 0; idLivre < nbLivres; idLivre = idLivre + 1)
+   {
+      char titreLivre[101];
+      scanf("%[^\n]\n", titreLivre);
+      if (strcmp(titreLivre, plusGrandTitre) > 0)
+      {
+         strcpy(plusGrandTitre, titreLivre);
+         printf("%s\n", titreLivre);
+      }
+   }
+}
+*/
