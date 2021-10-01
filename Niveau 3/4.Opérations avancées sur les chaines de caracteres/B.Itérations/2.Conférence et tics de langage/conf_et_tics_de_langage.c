@@ -1,25 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
-void    to_lower(char *str);
+void to_lower(char *str);
 
-int     main(void)
+int main(void)
 {
-    char    text[10001];
-    char    word[51];
-    char    arr[10001][51];
-    char    temp[51] = {0};
-    int     count;
-    int     tot_count;
-    int     i;
-    int     j;
+    char text[10001];
+    char word[51];
+    char arr[10001][51];
+    char temp[51] = {0};
+    int count;
+    int tot_count;
+    int i;
+    int j;
 
     scanf("%s\n", word);
     scanf("%[^\n]%*c\n", text);
 
     to_lower(word);
     to_lower(text);
-
 
     memset(temp, 0, sizeof(temp));
 
@@ -57,9 +56,9 @@ int     main(void)
     return (0);
 }
 
-void    to_lower(char *str)
+void to_lower(char *str)
 {
-    int     i;
+    int i;
     i = 0;
     while (str[i])
     {
@@ -69,3 +68,38 @@ void    to_lower(char *str)
     }
 }
 
+/*
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main()
+{
+   char motATrouver[51];
+   scanf("%s\n", motATrouver);
+   int longueurMot = strlen(motATrouver);
+   for (int pos = 0; pos < longueurMot; pos = pos + 1)
+   {
+      motATrouver[pos] = toupper(motATrouver[pos]);
+   }
+   int nbFois = 0;
+   char mot[51] = "";
+   while (scanf("%s", mot) == 1)
+   {
+      int longueurMotLu = strlen(mot);
+      // Ce test permet d’éviter de passer du temps sur les mots n’ayant
+      // pas la bonne taille.
+      if (longueurMotLu == longueurMot)
+      {
+         for (int pos = 0; pos < longueurMotLu; pos = pos + 1)
+         {
+            mot[pos] = toupper(mot[pos]);
+         }
+         if (strcmp(mot, motATrouver) == 0)
+         {
+            nbFois = nbFois + 1;
+         }
+      }
+   }
+   printf("%d\n", nbFois);
+}
+*/
