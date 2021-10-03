@@ -44,22 +44,23 @@ int main(void)
         {
             // put the string in desired printing format
             beautify(temp);
+            printf("%s\n", temp);
 
             // copy temp to titles[]
-            strcpy(titles[i], temp);
+            /*strcpy(titles[i], temp);*/
         }
         // empty temp
         memset(temp, 0, sizeof(temp));
         i++;
     }
 
-    i = 0;
-    while (i < tot_books)
-    {
-        printf("titles[i]: %s\n", titles[i]);
-        acronyme(acr, titles[i]);
-        i++;
-    }
+    /*i = 0;*/
+    /*while (i < tot_books)*/
+    /*{*/
+        /*printf("titles[i]: %s\n", titles[i]);*/
+        /*acronyme(acr, titles[i]);*/
+        /*i++;*/
+    /*}*/
     return (0);
 }
 
