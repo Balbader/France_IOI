@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int     main(void)
+int main(void)
 {
-    char    voy[6] = "aeiouy";
-    char    letter;
-    int     i;
+    char voy[6] = "aeiouy";
+    char letter;
+    int i;
 
     letter = 'b';
     while (letter < 'z' + 1)
@@ -12,7 +12,7 @@ int     main(void)
         i = 0;
         while (voy[i])
         {
-            if(letter == voy[i])
+            if (letter == voy[i])
                 letter++;
             i++;
         }
@@ -24,3 +24,25 @@ int     main(void)
     return (0);
 }
 
+/*
+#include <stdio.h>
+int main()
+{
+   for (char car = 'a'; car <= 'z'; car = car + 1)
+   {
+      if (car != 'a' && car != 'e' && car != 'i' &&
+          car != 'o' && car != 'u' && car != 'y')
+      {
+         if (car != 'z')
+         {
+            printf("%c ", car);
+         }
+         else
+         {
+            printf("%c\n", car);
+         }
+      }
+   }
+   printf("\n");
+}
+*/
