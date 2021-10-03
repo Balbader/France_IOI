@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-void    to_upper(char *str);
+void to_upper(char *str);
 
-int     main(void)
+int main(void)
 {
-    char    str[1001];
-    char    temp[1001];
-    char    code_min[27];
-    char    code_maj[27];
-    char    maj_alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char    min_alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
-    int     i;
-    int     j;
+    char str[1001];
+    char temp[1001];
+    char code_min[27];
+    char code_maj[27];
+    char maj_alphabet[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char min_alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
+    int i;
+    int j;
 
     scanf("%[^\n]\n", code_min);
     scanf("%[^\n]", str);
@@ -53,12 +53,12 @@ int     main(void)
     }
 
     printf("%s\n", temp);
-    return(0);
+    return (0);
 }
 
-void    to_upper(char *str)
+void to_upper(char *str)
 {
-    int     i;
+    int i;
     i = 0;
     while (str[i])
     {
@@ -67,3 +67,35 @@ void    to_upper(char *str)
         i++;
     }
 }
+
+/*
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int main()
+{
+   char decrypteur[27];
+   char texte[1001];
+
+   scanf("%[^\n]\n", decrypteur);
+   scanf("%[^\n]\n", texte);
+   int longueurTexte = strlen(texte);
+   for (int pos = 0; pos < longueurTexte; pos = pos + 1)
+   {
+      char caractereLu = texte[pos];
+      if (isalpha(caractereLu))
+      {
+         if (isupper(caractereLu))
+         {
+            caractereLu = toupper(decrypteur[tolower(caractereLu) - 'a']);
+         }
+         else
+         {
+            caractereLu = decrypteur[caractereLu - 'a'];
+         }
+      }
+      printf("%c", caractereLu);
+   }
+   printf("\n");
+}
+*/
