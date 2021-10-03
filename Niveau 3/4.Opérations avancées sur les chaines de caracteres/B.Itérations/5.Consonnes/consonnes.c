@@ -46,3 +46,38 @@ int main()
    printf("\n");
 }
 */
+
+/* Programme avec fonction:
+
+#include <stdio.h>
+#include <stdbool.h>
+bool estVoyelle(char car)
+{
+   char voyelles[7] = "aeiouy";
+   for (int idVoy = 0; idVoy < 7; idVoy = idVoy + 1)
+   {
+      if (car == voyelles[idVoy])
+         return true;
+   }
+   return false;
+}
+int main()
+{
+   for (char car = 'a'; car <= 'z'; car = car + 1)
+   {
+      if (!estVoyelle(car))
+      {
+         if (car != 'z')
+         {
+            printf("%c ", car);
+         }
+         else
+         {
+            printf("%c\n", car);
+         }
+      }
+   }
+   printf("\n");
+   return 0;
+}
+*/
