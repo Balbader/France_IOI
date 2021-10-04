@@ -5,7 +5,6 @@ void    cesar(char *str, int shift);
 
 int     main(void)
 {
-    char    alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
     char    str[1001] = "ikio kyz rg ykiutjk vgmk ja robxk";
     char    temp[1001];
 
@@ -26,12 +25,16 @@ void    cesar(char *str, int shift)
     {
         if (str[i] >= 'a' && str[i] <= 'z')
         {
-            c = str[i] - 'a';
-            c += shift;
-            c %= 26;
-            str[i] = c + 'a';
+            c = str[i] - 'a'; // 0 <= c < 26 i.e. initial position
+            c += shift;       // any value possible (no limits on `shift`) --> new position
+            while (c < 0)
+                c += 26;      // no longer negative --> prevent overflow
+            while (c > 25)
+                c -= 26;      // no longer 26+ --> prevent underflow
+            str[i] = c + 'a'; // new character
         }
         i++;
     }
     printf("%s\n", str);
 }
+
