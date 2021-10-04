@@ -1,33 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 
+void    cesar(char *str, int shift);
+
 int     main(void)
 {
     char    alphabet[27] = "abcdefghijklmnopqrstuvwxyz";
     char    str[1001] = "ikio kyz rg ykiutjk vgmk ja robxk";
     char    temp[1001];
-    int     res;
-    int     i;
-    int     j;
 
     strcpy(temp, str);
 
-    res = 0;
+    printf("%s\n", str);
+    cesar(temp, -6);
+    return (0);
+}
+
+void    cesar(char *str, int shift)
+{
+    char    c;
+    int     i;
+
     i = 0;
-    while (str[i] && temp[i])
+    while (str[i] != '\0')
     {
-        j = 0;
-        while (alphabet[j])
+        if (str[i] >= 'a' && str[i] <= 'z')
         {
-            if (alphabet[j] == str[i])
-            {
-                temp[i] = alphabet[j - 6];
-            }
-            j++;
+            c = str[i] - 'a';
+            c += shift;
+            c %= 26;
+            str[i] = c + 'a';
         }
         i++;
     }
-    printf("str : %s\n", str);
-    printf("temp: %s\n", temp);
-    return (0);
+    printf("%s\n", str);
 }
