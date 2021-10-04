@@ -26,12 +26,14 @@ int     main(void)
     pages = i + 2;
     while (i < tot_pages - 1)
     {
+        // check si pages est pair
         if (pages % 2 == 0)
         {
             pages *= 3;
             pages *= -1;
             cesar(temp[i], pages);
         }
+        // check si pages est impair
         else
         {
             pages *= -5;
@@ -57,6 +59,7 @@ void    cesar(char *str, int shift)
         {
             str[i] = str[i];
         }
+
         if (str[i] >= 'A' && str[i] <= 'Z')
         {
             c = str[i] - 'A';
