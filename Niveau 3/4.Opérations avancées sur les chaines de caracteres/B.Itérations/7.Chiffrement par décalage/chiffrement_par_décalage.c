@@ -56,9 +56,7 @@ void    cesar(char *str, int shift)
     {
         if (str[i] != ((str[i] >= 'A' && str[i] <= 'Z')
                     || (str[i] >= 'a' && str[i] <= 'z')))
-        {
             str[i] = str[i];
-        }
 
         if (str[i] >= 'A' && str[i] <= 'Z')
         {
