@@ -19,6 +19,7 @@ int     main(void)
     {
         scanf("%[^\n]\n", str);
         strcpy(temp[i], str);
+        memset(str, 0, sizeof(str));
         i++;
     }
 
@@ -54,10 +55,6 @@ void    cesar(char *str, int shift)
     i = 0;
     while (str[i] != '\0')
     {
-        if (str[i] != ((str[i] >= 'A' && str[i] <= 'Z')
-                    || (str[i] >= 'a' && str[i] <= 'z')))
-            str[i] = str[i];
-
         if (str[i] >= 'A' && str[i] <= 'Z')
         {
             c = str[i] - 'A';
