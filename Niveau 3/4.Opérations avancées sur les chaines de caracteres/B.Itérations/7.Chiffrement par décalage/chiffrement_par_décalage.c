@@ -8,6 +8,7 @@ int     main(void)
     char    str[1001];
     char    temp[1001][1001];
     int     tot_pages;
+    int     shift;
     int     i;
     int     pages;
 
@@ -30,16 +31,14 @@ int     main(void)
         // check si pages est pair
         if (pages % 2 == 0)
         {
-            pages *= 3;
-            pages *= -1;
-            cesar(temp[i], pages);
+            shift = -3 * pages;
+            cesar(temp[i], shift);
         }
         // check si pages est impair
         else
         {
-            pages *= -5;
-            pages *= -1;
-            cesar(temp[i], pages);
+            shift = 5 * pages;
+            cesar(temp[i], shift);
         }
         i++;
         pages = i + 2;
