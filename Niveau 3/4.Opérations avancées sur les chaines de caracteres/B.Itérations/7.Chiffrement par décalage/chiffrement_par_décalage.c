@@ -80,3 +80,54 @@ void    cesar(char *str, int shift)
     printf("%s\n", str);
 }
 
+/*
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int     main(void)
+{
+    char    str[1001];
+    char    letter;
+    char    c;
+    int     nbPages;
+    int     decalage;
+    int     len;
+    int     isMaj;
+    int     i;
+    int     j;
+
+    scanf("%d\n", &nbPages);
+
+    i = 2;
+    while (i < nbPages + 1)
+    {
+        scanf("%[^\n]\n", str);
+        if (i % 2 == 0)
+            decalage = -3 * i;
+        else
+            decalage = 5 * i;
+        len = strlen(str);
+        j = 0;
+        while (j < len)
+        {
+            letter = str[j];
+            if (isalpha(letter))
+            {
+                isMaj = isupper(letter);
+                if (isMaj)
+                    letter = tolower(letter);
+                c = ((int)(letter) - (int)('a') + decalage) % 26;
+                letter = (char)(c + (int)('a'));
+                if (isMaj)
+                    letter = toupper(letter);
+            }
+            printf("%c", letter);
+            j++;
+        }
+        printf("\n");
+        i++;
+    }
+    return (0);
+}
+*/
