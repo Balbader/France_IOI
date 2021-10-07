@@ -48,7 +48,7 @@ int     main(void)
 
 void    cesar(char *str, int shift)
 {
-    char    c;
+    int    c;
     int     i;
 
     i = 0;
