@@ -90,7 +90,7 @@ int     main(void)
 {
     char    str[1001];
     char    letter;
-    char    c;
+    int     c;
     int     nbPages;
     int     decalage;
     int     len;
