@@ -48,7 +48,7 @@ int     main(void)
 
 void    cesar(char *str, int shift)
 {
-    int    c;
+    int     c;
     int     i;
 
     i = 0;
@@ -80,7 +80,6 @@ void    cesar(char *str, int shift)
     printf("%s\n", str);
 }
 
-
 /*
 #include <stdio.h>
 #include <string.h>
@@ -90,7 +89,7 @@ int     main(void)
 {
     char    str[1001];
     char    letter;
-    int     c;
+    char    c;
     int     nbPages;
     int     decalage;
     int     len;
