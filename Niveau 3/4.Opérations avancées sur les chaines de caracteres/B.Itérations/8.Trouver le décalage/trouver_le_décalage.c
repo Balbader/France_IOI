@@ -46,7 +46,14 @@ void	cesar(char *str, int shift)
 
 void	freq_counter(char *str)
 {
-	
+	char	arr[27] = "abcdefghijklmnopqrstuvwxyz";
+	int		count[27] = {0};
+	int		i;
+	int		j;
+	int		tot_letters;
+	double	res;
+
+	tot_letters = count_letter(str);
 }
 
 
