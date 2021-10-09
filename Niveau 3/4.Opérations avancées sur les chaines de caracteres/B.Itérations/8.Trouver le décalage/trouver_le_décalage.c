@@ -54,6 +54,19 @@ void	freq_counter(char *str)
 	double	res;
 
 	tot_letters = count_letter(str);
+	res = 0.0;
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (arr[j])
+		{
+			if (str[i] == arr[j])
+				count[j] += 1;
+			j++;
+		}
+		i++;
+	}
 }
 
 
