@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 void	cesar(char *str, int shift);
+void	freq_counter(char *str);
+int		count_letter(char *str);
 
 int 	main(void)
 {
@@ -41,3 +43,28 @@ void	cesar(char *str, int shift)
 	}
 	printf("%s\n", str);
 }
+
+void	freq_counter(char *str)
+{
+	
+}
+
+
+int		count_letter(char *str)
+{
+	int		count;
+	int		i;
+
+	count = 0;
+	i = 0;
+
+	while (str[i])
+	{
+		if ((str[i] >= 'A' && str[i] <= 'Z')
+				|| (str[i] >= 'a' && str[i] <= 'z'))
+			count++;
+		i++;
+	}
+	return (count);
+}
+
