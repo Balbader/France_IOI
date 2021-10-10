@@ -4,9 +4,9 @@ void	cesar(char *str, int shift);
 void	freq_counter(char *str);
 int		count_letter(char *str);
 
-int 	main(void)
+int		main(void)
 {
-    return (0);
+	return (0);
 }
 
 void	cesar(char *str, int shift)
