@@ -1,11 +1,20 @@
 #include <stdio.h>
 
 void	cesar(char *str, int shift);
-void	freq_counter(char *str);
-int		count_letter(char *str);
+void	to_lower(char *str);
+int		freq_counter(char *str);
 
 int		main(void)
 {
+	char	str[10001] = "Np epiep fetwtdp fy opnlwlrp op zykp nlclnepcpd.";
+	char	new_str[10001];
+	int		res;
+	int		shift;
+	res = freq_counter(str);
+	printf ("res: %d\n", res);
+	shift = 11;
+	printf ("shift: %d\n", shift);
+	cesar(str, shift);
 	return (0);
 }
 
@@ -44,47 +53,48 @@ void	cesar(char *str, int shift)
 	printf("%s\n", str);
 }
 
-void	freq_counter(char *str)
+int		freq_counter(char *str)
 {
-	char	arr[27] = "abcdefghijklmnopqrstuvwxyz";
-	int		count[27] = {0};
+	char	alph[27] = "abcdefghijklmnopqrstuvwxyz";
+	char	res;
+	int		arr[26] = {0};
+	int		count;
 	int		i;
 	int		j;
-	int		tot_letters;
-	double	res;
 
-	tot_letters = count_letter(str);
-	res = 0.0;
+	count = 0;
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
-		while (arr[j])
+		while (alph[j])
 		{
-			if (str[i] == arr[j])
-				count[j] += 1;
+			if (str[i] == alph[j])
+			{
+				arr[j] += 1;
+				if (arr[j] > count)
+				{
+					count = arr[j];
+					res	= alph[j];
+				}
+			}
 			j++;
 		}
 		i++;
 	}
+	return (count);
 }
 
-
-int		count_letter(char *str)
+void	to_lower(char *str)
 {
-	int		count;
 	int		i;
 
-	count = 0;
 	i = 0;
-
 	while (str[i])
 	{
-		if ((str[i] >= 'A' && str[i] <= 'Z')
-				|| (str[i] >= 'a' && str[i] <= 'z'))
-			count++;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 		i++;
 	}
-	return (count);
 }
 
