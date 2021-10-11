@@ -1,13 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-/* 1 3 7 5 o
- * 1 = ligne de depart
- * 3 = point de depart du char a imprimer
- * 7 = nombre de lignes a imprimer
- * 5 = point d'arrivee du char a imprimer
- */
-
+void	print_rec(int, int, int, int, char);
 
 int		main(void)
 {
@@ -62,3 +56,16 @@ int		main(void)
 
 	return (0);
 }
+
+
+void	print_rec(int line, int start, int tot_lines, int end, char color)
+{
+	
+}
+
+/* 1 3 7 5 o
+ * 1 = ligne de depart
+ * 3 = point de depart du char a imprimer
+ * 7 = nombre de lignes a imprimer
+ * 5 = point d'arrivee du char a imprimer
+ */
