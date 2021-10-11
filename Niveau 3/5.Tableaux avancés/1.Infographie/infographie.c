@@ -22,6 +22,7 @@ int		main(void)
 	char	pixel = '.';
 	int		i;
 	int		j;
+	int		k;
 
 	scanf("%d %d", &x, &y);
 	scanf("%d\n", &tot_rec);
@@ -30,22 +31,20 @@ int		main(void)
 	while (i < tot_rec)
 	{
 		scanf("%d %d %d %d %c\n", &line, &start, &tot_lines, &end, &color);
-		i++;
-	}
-
-	i = 0;
-	while (i < x)
-	{
 		j = 0;
-		while (j < y)
+		while (j < x)
 		{
-			printf("%c", pixel);
+			k = 0;
+			while (k < y)
+			{
+				printf("%c", pixel);
+				k++;
+			}
+			printf("\n");
 			j++;
 		}
-		printf("\n");
 		i++;
 	}
-
 
 	return (0);
 }
