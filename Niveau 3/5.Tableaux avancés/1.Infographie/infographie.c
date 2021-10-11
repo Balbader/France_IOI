@@ -27,6 +27,7 @@ int		main(void)
 	scanf("%d %d", &x, &y);
 	scanf("%d\n", &tot_rec);
 
+
 	i = 0;
 	while (i < tot_rec)
 	{
