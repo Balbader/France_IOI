@@ -25,8 +25,21 @@ int		main(void)
 	int		k;
 
 	scanf("%d %d", &x, &y);
-	scanf("%d\n", &tot_rec);
+	/*scanf("%d\n", &tot_rec);*/
 
+
+	i = 0;
+	while (i < x)
+	{
+		j = 0;
+		while (j < y)
+		{
+			printf("%c", pixel);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 
 	i = 0;
 	while (i < tot_rec)
