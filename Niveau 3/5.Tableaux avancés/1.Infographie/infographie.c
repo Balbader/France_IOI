@@ -30,11 +30,3 @@ int		main(void)
 	return (0);
 }
 
-
-
-/* 1 3 7 5 o
- * 1 = ligne de depart
- * 3 = point de depart du char a imprimer
- * 7 = nombre de lignes a imprimer
- * 5 = point d'arrivee du char a imprimer
- */
