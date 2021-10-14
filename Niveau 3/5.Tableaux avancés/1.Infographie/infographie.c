@@ -8,20 +8,17 @@ int		main(void)
 	int		num_rows;
 	int		num_columns;
 	int		tot_rectangles;
-
 	int		line;
 	int		start;
 	int		tot_lines;
 	int		end;
 	char	new_letter;
-
 	int		i;
 	int		j;
 	int		k;
 
 	scanf("%d %d\n", &num_rows, &num_columns);
 	scanf("%d\n", &tot_rectangles);
-
 	int 	grid[num_rows][num_columns];
 
 	default_grid(num_rows, num_columns, grid);
@@ -46,7 +43,6 @@ int		main(void)
 		}
 		k++;
 	}
-
 	i = 0;
 	while (i < num_rows)
 	{
