@@ -3,7 +3,7 @@
 
 int		default_grid(int x, int y, int grid[x][y]);
 
-int		main(void)
+int	main(void)
 {
 	int		num_rows;
 	int		num_columns;
@@ -19,15 +19,13 @@ int		main(void)
 
 	scanf("%d %d\n", &num_rows, &num_columns);
 	scanf("%d\n", &tot_rectangles);
-	int 	grid[num_rows][num_columns];
-
+	int		grid[num_rows][num_columns];
 	default_grid(num_rows, num_columns, grid);
-
 	k = 0;
 	while (k < tot_rectangles)
 	{
 		scanf("%d %d %d %d %c\n",
-				&line, &start, &tot_lines, &end, &new_letter);
+			&line, &start, &tot_lines, &end, &new_letter);
 		i = 0;
 		while (i < num_rows)
 		{
@@ -35,7 +33,7 @@ int		main(void)
 			while (j < num_columns)
 			{
 				if ((j >= start && j <= end)
-						&& (i >= line && i <= tot_lines))
+					&& (i >= line && i <= tot_lines))
 					grid[i][j] = new_letter;
 				j++;
 			}
@@ -58,7 +56,7 @@ int		main(void)
 	return (0);
 }
 
-int		default_grid(int x, int y, int grid[x][y])
+int	default_grid(int x, int y, int grid[x][y])
 {
 	int		i;
 	int		j;
