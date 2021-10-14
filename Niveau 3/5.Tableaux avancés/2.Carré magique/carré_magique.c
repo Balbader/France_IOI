@@ -3,15 +3,15 @@
 int	main(void)
 {
 	int		grid[20][20];
-	int		res[402];
 	int		nbr;
 	int		grid_nbr;
 	int		count;
+	int		temp_x;
+	int		temp_y;
 	int		diag_x;
 	int		diag_y;
 	int		i;
 	int		j;
-	int		k;
 
 	scanf("%d\n", &nbr);
 
@@ -37,23 +37,15 @@ int	main(void)
 		while (j < nbr)
 		{
 			count += grid[i][j];
-			res[i] = count;
+			temp_x = count;
 			j++;
 		}
-		printf("ligne: %d - count: %d\n",i, count);
 		count = 0;
 		i++;
 	}
 
-	i = 0;
-	while (i < (nbr * 2 + 2))
-	{
-		printf("%d : %d\n", i, res[i]);
-		i++;
-	}
 
 	// calculate total for each column
-	k = nbr;
 	count = 0;
 	j = 0;
 	while (j < nbr)
@@ -62,30 +54,45 @@ int	main(void)
 		while (i < nbr)
 		{
 			count += grid[i][j];
-			res[k] = count;
+			temp_y = count;
 			i++;
 		}
-		printf("col: %d - count: %d\n",j , count);
 		count = 0;
-		k++;
 		j++;
 	}
 
+	// calculate total for diagonal from left to right up bottom
+	diag_x = 0;
 	i = 0;
-	while (i < (nbr * 2 + 2))
+	while (i < nbr)
 	{
-		printf("%d : %d\n", i, res[i]);
+		j = 0;
+		while (j < nbr)
+		{
+			if (i == j)
+				diag_x += grid[i][j];
+			j++;
+		}
 		i++;
 	}
 
-	// calculate total for each diagonal
-	
-
-	i = 0;
-	while (i < (nbr * 2 + 2))
+	// calculate total for diagonal from right to left bottom up
+	diag_y = 0;
+	j = nbr;
+	while (j >= 0)
 	{
-		printf("%d : %d\n", i, res[i]);
-		i++;
+		i = nbr;
+		while (i >= 0)
+		{
+			if (i == j)
+			{
+				diag_y += grid[j][i];
+			}
+			i--;
+		}
+		j--;
 	}
+
+	// write condition to check if temp_x, temp_y, diag_x, diag_y are equal.
 	return (0);
 }
