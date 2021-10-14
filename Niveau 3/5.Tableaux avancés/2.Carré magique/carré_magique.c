@@ -11,6 +11,7 @@ int	main(void)
 	int		diag_y;
 	int		i;
 	int		j;
+	int		k;
 
 	scanf("%d\n", &nbr);
 
@@ -27,19 +28,7 @@ int	main(void)
 		i++;
 	}
 
-	i = 0;
-	while (i < nbr)
-	{
-		j = 0;
-		while (j < nbr)
-		{
-			printf("[%d][%d]: %d ", i, j, grid[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-
+	// calculate total for each row
 	count = 0;
 	i = 0;
 	while (i < nbr)
@@ -48,6 +37,7 @@ int	main(void)
 		while (j < nbr)
 		{
 			count += grid[i][j];
+			res[i] = count;
 			j++;
 		}
 		printf("ligne: %d - count: %d\n",i, count);
@@ -55,6 +45,15 @@ int	main(void)
 		i++;
 	}
 
+	i = 0;
+	while (i < (nbr * 2 + 2))
+	{
+		printf("%d : %d\n", i, res[i]);
+		i++;
+	}
+
+	// calculate total for each column
+	k = nbr;
 	count = 0;
 	j = 0;
 	while (j < nbr)
@@ -63,11 +62,30 @@ int	main(void)
 		while (i < nbr)
 		{
 			count += grid[i][j];
+			res[k] = count;
 			i++;
 		}
 		printf("col: %d - count: %d\n",j , count);
 		count = 0;
+		k++;
 		j++;
+	}
+
+	i = 0;
+	while (i < (nbr * 2 + 2))
+	{
+		printf("%d : %d\n", i, res[i]);
+		i++;
+	}
+
+	// calculate total for each diagonal
+	
+
+	i = 0;
+	while (i < (nbr * 2 + 2))
+	{
+		printf("%d : %d\n", i, res[i]);
+		i++;
 	}
 	return (0);
 }
