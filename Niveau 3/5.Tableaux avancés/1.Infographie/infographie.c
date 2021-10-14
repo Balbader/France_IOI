@@ -21,7 +21,6 @@ int		main(void)
 	char	pixel = '.';
 	int		i;
 	int		j;
-	int		k;
 
 	scanf("%d %d", &x, &y);
 	scanf("%d\n", &tot_rec);
