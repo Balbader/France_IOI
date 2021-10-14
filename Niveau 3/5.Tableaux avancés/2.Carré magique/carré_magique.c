@@ -13,6 +13,7 @@ int	main(void)
 	int		j;
 
 	scanf("%d\n", &nbr);
+
 	i = 0;
 	while (i < nbr)
 	{
@@ -25,6 +26,7 @@ int	main(void)
 		}
 		i++;
 	}
+
 	i = 0;
 	while (i < nbr)
 	{
@@ -37,6 +39,7 @@ int	main(void)
 		printf("\n");
 		i++;
 	}
+
 	count = 0;
 	i = 0;
 	while (i < nbr)
@@ -68,4 +71,3 @@ int	main(void)
 	}
 	return (0);
 }
-
