@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+int	counter_x(int nbr, int i, int j,int grid[i][j]);
+int	counter_y(int nbr, int i, int j,int grid[i][j]);
+int	diag_x(int nbr, int i, int j,int grid[i][j]);
+int	diag_y(int nbr, int i, int j,int grid[i][j]);
+
 int	main(void)
 {
 	int		grid[20][20];
@@ -96,3 +101,14 @@ int	main(void)
 	// write condition to check if temp_x, temp_y, diag_x, diag_y are equal.
 return (0);
 }
+
+int	counter_x(int nbr, int i, int j,int grid[i][j])
+{
+	int		count;
+
+	i = 0;
+	while (i < )
+}
+int	counter_y(int nbr, int i, int j,int grid[i][j]);
+int	diag_x(int nbr, int i, int j,int grid[i][j]);
+int	diag_y(int nbr, int i, int j,int grid[i][j]);
