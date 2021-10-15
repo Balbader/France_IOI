@@ -1,25 +1,19 @@
 #include <stdio.h>
 
-int	counter_x(int nbr, int i, int j,int grid[i][j]);
-int	counter_y(int nbr, int i, int j,int grid[i][j]);
-int	diag_x(int nbr, int i, int j,int grid[i][j]);
-int	diag_y(int nbr, int i, int j,int grid[i][j]);
+int	counter_x(int nbr, int grid[20][20]);
+int	counter_y(int nbr, int grid[20][20]);
+int	diag_x(int nbr, int grid[20][20]);
+int diag_y(int nbr, int grid[20][20]);
 
 int	main(void)
 {
 	int		grid[20][20];
 	int		nbr;
 	int		grid_nbr;
-	int		count;
-	int		temp_x;
-	int		temp_y;
-	int		diag_x;
-	int		diag_y;
 	int		i;
 	int		j;
 
 	scanf("%d\n", &nbr);
-
 	i = 0;
 	while (i < nbr)
 	{
@@ -32,9 +26,20 @@ int	main(void)
 		}
 		i++;
 	}
+	printf("counter_x: %d\n", counter_x(nbr, grid));
+	printf("counter_y: %d\n", counter_y(nbr, grid));
+	printf("diag_x: %d\n", diag_x(nbr, grid));
+	printf("diag_y: %d\n", diag_y(nbr, grid));
+	return (0);
+}
 
-	// calculate total for each row
-	count = 0;
+int	counter_x(int nbr, int grid[20][20])
+{
+	int		count;
+	int		temp;
+	int		i;
+	int		j;
+
 	i = 0;
 	while (i < nbr)
 	{
@@ -42,16 +47,22 @@ int	main(void)
 		while (j < nbr)
 		{
 			count += grid[i][j];
-			temp_x = count;
+			temp = count;
 			j++;
 		}
 		count = 0;
 		i++;
 	}
+	return (temp);
+}
 
+int	counter_y(int nbr, int grid[20][20])
+{
+	int		count;
+	int		temp;
+	int		i;
+	int		j;
 
-	// calculate total for each column
-	count = 0;
 	j = 0;
 	while (j < nbr)
 	{
@@ -59,15 +70,22 @@ int	main(void)
 		while (i < nbr)
 		{
 			count += grid[i][j];
-			temp_y = count;
+			temp = count;
 			i++;
 		}
 		count = 0;
 		j++;
 	}
+	return (temp);
+}
 
-	// calculate total for diagonal from left to right up bottom
-	diag_x = 0;
+int	diag_x(int nbr, int grid[20][20])
+{
+	int		count;
+	int		i;
+	int		j;
+
+	count = 0;
 	i = 0;
 	while (i < nbr)
 	{
@@ -75,14 +93,24 @@ int	main(void)
 		while (j < nbr)
 		{
 			if (i == j)
-				diag_x += grid[i][j];
+			{
+				count += grid[i][j];
+			}
 			j++;
 		}
 		i++;
 	}
+	return (count);
+}
 
-	// calculate total for diagonal from right to left bottom up
-	diag_y = 0;
+
+int	diag_y(int nbr, int grid[20][20])
+{
+	int		count;
+	int		i;
+	int		j;
+
+	count = 0;
 	j = nbr;
 	while (j >= 0)
 	{
@@ -91,24 +119,11 @@ int	main(void)
 		{
 			if (i == j)
 			{
-				diag_y += grid[j][i];
+				count += grid[i][j];
 			}
 			i--;
 		}
 		j--;
 	}
-
-	// write condition to check if temp_x, temp_y, diag_x, diag_y are equal.
-return (0);
+	return (count);
 }
-
-int	counter_x(int nbr, int i, int j,int grid[i][j])
-{
-	int		count;
-
-	i = 0;
-	while (i < )
-}
-int	counter_y(int nbr, int i, int j,int grid[i][j]);
-int	diag_x(int nbr, int i, int j,int grid[i][j]);
-int	diag_y(int nbr, int i, int j,int grid[i][j]);
