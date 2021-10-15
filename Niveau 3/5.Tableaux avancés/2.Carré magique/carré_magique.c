@@ -94,5 +94,5 @@ int	main(void)
 	}
 
 	// write condition to check if temp_x, temp_y, diag_x, diag_y are equal.
-	return (0);
+return (0);
 }
