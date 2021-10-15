@@ -9,6 +9,7 @@ void check_res(int *grid);
 int	main(void)
 {
 	int		grid[20][20];
+	int		res[100];
 	int		nbr;
 	int		i;
 	int		j;
@@ -26,7 +27,6 @@ int	main(void)
 		i++;
 	}
 
-	int		res[20] = {counter_x(nbr, grid), counter_y(nbr, grid), diag_x(nbr, grid), diag_y(nbr, grid)};
 	check_res(res);
 	return (0);
 }
@@ -38,6 +38,7 @@ int	counter_x(int nbr, int grid[20][20])
 	int		i;
 	int		j;
 
+	temp = 0;
 	i = 0;
 	while (i < nbr)
 	{
@@ -61,6 +62,7 @@ int	counter_y(int nbr, int grid[20][20])
 	int		i;
 	int		j;
 
+	temp = 0;
 	j = 0;
 	while (j < nbr)
 	{
