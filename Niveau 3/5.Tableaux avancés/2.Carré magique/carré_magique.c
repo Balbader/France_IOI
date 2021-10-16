@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-int	counter_x(int nbr, int grid[20][20]);
-int	counter_y(int nbr, int grid[20][20]);
-int	diag_x(int nbr, int grid[20][20]);
-int diag_y(int nbr, int grid[20][20]);
-void check_res(int *grid);
+int		counter_x(int nbr, int grid[20][20]);
+int		counter_y(int nbr, int grid[20][20]);
+int		diag_x(int nbr, int grid[20][20]);
+int		diag_y(int nbr, int grid[20][20]);
+void	check_res(int *grid);
 
 int	main(void)
 {
 	int		grid[20][20];
-	int		res[402];
+	int		res[1001];
 	int		nbr;
 	int		i;
 	int		j;
@@ -26,7 +26,31 @@ int	main(void)
 		}
 		i++;
 	}
-
+	i = 0;
+	while (i <= (nbr * 2) + 2)
+	{
+		if (i <= nbr)
+		{
+			res[i] = counter_x(nbr, grid);
+			i++;
+		}
+		if (i <= nbr * 2)
+		{
+			res[i] = counter_y(nbr, grid);
+			i++;
+		}
+		if (i < (nbr * 2) + 2)
+		{
+			res[i] = diag_x(nbr, grid);
+			i++;
+		}
+		if (i == (nbr * 2) + 2)
+		{
+			res[i] = diag_y(nbr, grid);
+			i++;
+		}
+		i++;
+	}
 	check_res(res);
 	return (0);
 }
@@ -103,7 +127,6 @@ int	diag_x(int nbr, int grid[20][20])
 	return (count);
 }
 
-
 int	diag_y(int nbr, int grid[20][20])
 {
 	int		count;
@@ -128,25 +151,23 @@ int	diag_y(int nbr, int grid[20][20])
 	return (count);
 }
 
-void check_res(int *grid)
+void	check_res(int *grid)
 {
-	int count;
+	int		count;
 	int		i;
 
 	count = 0;
 	i = 0;
 	while (i < (sizeof(*grid) / sizeof(grid[0])))
 	{
-		if (grid[i] == grid[i+1])
+		if (grid[i] == grid[i + 1])
 		{
 			count++;
 		}
 		i++;
 	}
-
 	if (count == (sizeof(*grid) / sizeof(grid[0])))
 		printf("yes\n");
 	else
 		printf("no\n");
-
 }
