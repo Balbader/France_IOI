@@ -31,25 +31,13 @@ int	main(void)
 	while (i <= (nbr * 2) + 2)
 	{
 		if (i <= nbr)
-		{
 			res[i] = counter_x(nbr, grid);
-			i++;
-		}
 		else if (i > nbr && i <= (nbr * 2))
-		{
 			res[i] = counter_y(nbr, grid);
-			i++;
-		}
 		else if (i > (nbr * 2) && i < (nbr * 2) + 2)
-		{
 			res[i] = diag_x(nbr, grid);
-			i++;
-		}
 		else
-		{
 			res[i] = diag_y(nbr, grid);
-			i++;
-		}
 		i++;
 	}
 	check_res(res);
