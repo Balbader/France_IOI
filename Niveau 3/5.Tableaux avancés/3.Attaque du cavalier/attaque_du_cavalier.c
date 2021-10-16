@@ -13,14 +13,14 @@ int		main(void)
 	int		j;
 
 	scan_arr(arr);
-	return (true);
+	return (0);
 }
 
 char	scan_arr(char arr[8][8])
 {
 	int		i;
 	int		j;
-	
+
 	i = 0;
 	while (i < 8)
 	{
