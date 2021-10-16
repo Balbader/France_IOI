@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+typedef int bool;
+#define true 1
+#define false 0
+
 char	scan_arr(char arr[8][8]);
 
 int		main(void)
@@ -9,7 +13,7 @@ int		main(void)
 	int		j;
 
 	scan_arr(arr);
-	return (0);
+	return (true);
 }
 
 char	scan_arr(char arr[8][8])
