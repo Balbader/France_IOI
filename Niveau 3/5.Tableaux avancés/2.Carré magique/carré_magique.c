@@ -15,6 +15,7 @@ int	main(void)
 	int		j;
 
 	scanf("%d\n", &nbr);
+
 	i = 0;
 	while (i < nbr)
 	{
