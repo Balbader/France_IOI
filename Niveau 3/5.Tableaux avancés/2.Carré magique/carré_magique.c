@@ -34,17 +34,17 @@ int	main(void)
 			res[i] = counter_x(nbr, grid);
 			i++;
 		}
-		if (i <= nbr * 2)
+		else if (i > nbr && i <= (nbr * 2))
 		{
 			res[i] = counter_y(nbr, grid);
 			i++;
 		}
-		if (i < (nbr * 2) + 2)
+		else if (i > (nbr * 2) && i < (nbr * 2) + 2)
 		{
 			res[i] = diag_x(nbr, grid);
 			i++;
 		}
-		if (i == (nbr * 2) + 2)
+		else
 		{
 			res[i] = diag_y(nbr, grid);
 			i++;
