@@ -9,7 +9,7 @@ void check_res(int *grid);
 int	main(void)
 {
 	int		grid[20][20];
-	int		res[100];
+	int		res[402];
 	int		nbr;
 	int		i;
 	int		j;
