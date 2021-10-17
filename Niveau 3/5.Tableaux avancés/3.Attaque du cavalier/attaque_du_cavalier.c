@@ -5,8 +5,7 @@ typedef int bool;
 #define false 0
 
 char	scan_arr(char arr[8][8]);
-int		check_moves(int knight_x, int knight_y, char arr[8][8]);
-bool	check_count(int nbr);
+bool	check_moves(int knight_x, int knight_y, char arr[8][8]);
 
 int		main(void)
 {
@@ -32,7 +31,7 @@ int		main(void)
 				knight_x = i;
 				knight_y = j;
 				temp = check_moves(knight_x, knight_y, arr);
-				if (check_count(temp) == true)
+				if (temp == true)
 				{
 					printf("yes\n");
 					return (0);
@@ -42,7 +41,7 @@ int		main(void)
 		}
 		i++;
 	}
-	if (check_count(temp) == false)
+	if (temp == false)
 	{
 		printf("no\n");
 		return (0);
@@ -70,7 +69,7 @@ char	scan_arr(char arr[8][8])
 	return (**arr);
 }
 
-int		check_moves(int knight_x, int knight_y, char arr[8][8])
+bool	check_moves(int knight_x, int knight_y, char arr[8][8])
 {
 
 	int		x_move[8] = {2, 1, -1, -2, -2, -1, 1, 2};
@@ -88,19 +87,11 @@ int		check_moves(int knight_x, int knight_y, char arr[8][8])
 		{
 			if (arr[knight_x + x_move[i]][knight_y + y_move[j]] >= 'a'
 					&& arr[knight_x + x_move[i]][knight_y + y_move[j]] <= 'z')
-				count += 1;
+				return (true);
 			j++;
 		}
 		i++;
 	}
-	return (count);
-}
-
-bool	check_count(int nbr)
-{
-	if (nbr > 0)
-	{
-		return (true);
-	}
 	return (false);
 }
+
