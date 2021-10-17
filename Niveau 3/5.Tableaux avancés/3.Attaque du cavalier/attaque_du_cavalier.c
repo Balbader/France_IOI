@@ -1,20 +1,26 @@
 #include <stdio.h>
 
+typedef int bool;
+#define true 1
+#define false 0
+
 char	scan_arr(char arr[8][8]);
 int		check_moves(int knight_x, int knight_y, char arr[8][8]);
-void	check_count(int nbr);
+bool	check_count(int nbr);
 
 int		main(void)
 {
 	char	arr[8][8];
 	int		knight_x;
 	int		knight_y;
+	int		temp;
 	int		i;
 	int		j;
 
 	scan_arr(arr);
 
 	// find knight positions
+	temp = 0;
 	i = 0;
 	while (i < 8)
 	{
@@ -25,11 +31,21 @@ int		main(void)
 			{
 				knight_x = i;
 				knight_y = j;
-				check_count(check_moves(knight_x, knight_y, arr));
+				temp = check_moves(knight_x, knight_y, arr);
+				if (check_count(temp) == true)
+				{
+					printf("yes\n");
+					return (0);
+				}
 			}
 			j++;
 		}
 		i++;
+	}
+	if (check_count(temp) == false)
+	{
+		printf("no\n");
+		return (0);
 	}
 	return (0);
 }
@@ -80,17 +96,11 @@ int		check_moves(int knight_x, int knight_y, char arr[8][8])
 	return (count);
 }
 
-void	check_count(int nbr)
+bool	check_count(int nbr)
 {
 	if (nbr > 0)
 	{
-		printf("yes\n");
-		printf("%d\n", nbr);
-		nbr = 0;
+		return (true);
 	}
-	if (nbr == 0)
-	{
-		printf("no\n");
-		printf("%d\n", nbr);
-	}
+	return (false);
 }
