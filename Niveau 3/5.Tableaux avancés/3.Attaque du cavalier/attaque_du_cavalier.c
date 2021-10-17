@@ -2,7 +2,7 @@
 
 typedef int bool;
 #define true 1
-#define false 
+#define false
 
 char	scan_arr(char arr[8][8]);
 void	print_arr(char arr[8][8]);
