@@ -5,7 +5,6 @@ typedef int bool;
 #define false
 
 char	scan_arr(char arr[8][8]);
-void	print_arr(char arr[8][8]);
 
 int		main(void)
 {
@@ -14,7 +13,6 @@ int		main(void)
 	int		j;
 
 	scan_arr(arr);
-	print_arr(arr);
 	return (0);
 }
 
@@ -38,21 +36,3 @@ char	scan_arr(char arr[8][8])
 	return (**arr);
 }
 
-void	print_arr(char arr[8][8])
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	while (i < 8)
-	{
-		j = 0;
-		while (j < 8)
-		{
-			printf("%c", arr[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-}
