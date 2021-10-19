@@ -23,10 +23,7 @@ int	main(void)
 			if (arr[i][j] == 'C')
 			{
 				if (check_moves(i, j, arr) == FALSE)
-				{
 					j++;
-					i++;
-				}
 				if (check_moves(i, j, arr) == TRUE)
 				{
 					printf("yes\n");
@@ -76,8 +73,8 @@ t_bool   check_moves(int knight_x, int knight_y, char arr[8][8])
 	i = 0;
 	while (i < 8 && j < 8)
 	{
-		if (arr[knight_x + x_move[i]][knight_y + y_move[j]] < 8
-				|| arr[knight_x + x_move[i]][knight_y + y_move[j]] > 8)
+		if ((knight_x < 0) || (knight_x > 8)
+				|| (knight_y < 0) || (knight_y > 8))
 			return (' ');
 		if (arr[knight_x + x_move[i]][knight_y + y_move[j]] >= 'a'
 				&& arr[knight_x + x_move[i]][knight_y + y_move[j]] <= 'z')
