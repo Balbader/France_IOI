@@ -11,40 +11,35 @@ int	main(void)
 {
 	char	arr[8][8];
 	int 	check;
-	int		count;
 	int		i;
 	int		j;
 
 	scan_arr(arr);
-	count = 0;
+	check = 0;
 	i = 0;
 	while (i < 8)
 	{
 		j = 0;
 		while (j < 8)
 		{
-			if (arr[i][j] == '.' || (arr[i][j] >= 'a' && arr[i][j] <= 'z'))
-				count++;
 			if (arr[i][j] == 'C')
 			{
 				check = check_moves(i, j, arr);
-				if (check == FALSE)
-				{
-					count++;
-					j++;
-				}
-				else
+				if (check == 1)
 				{
 					printf("yes\n");
 					return (0);
+				}
+				else
+				{
+					j++;
 				}
 			}
 			j++;
 		}
 		i++;
 	}
-	if (count == 64)
-		printf("no\n");
+	printf("no\n");
 	return (0);
 }
 
@@ -79,9 +74,15 @@ t_bool   check_moves(int x, int y, char arr[8][8])
 	i = 0;
 	while (i < 8 && j < 8)
 	{
-		if ((x < 0) || (x > 8) || (y < 0) || (y > 8))
-			return (' ');
+		 /*dans le cas ou le cavalier sort de l'echiquier*/
+		if (arr[x + x_move[i]][y + y_move[j]] < 0
+				|| arr[x + x_move[i]][y + y_move[j]] > 8)
+		{
+			i++;
+			j++;
+		}
 
+		 /*dans le cas ou le cavalier bouffe un pion adverse*/
 		if (arr[x + x_move[i]][y + y_move[j]] >= 'a'
 				&& arr[x + x_move[i]][y + y_move[j]] <= 'z')
 			return (TRUE);
