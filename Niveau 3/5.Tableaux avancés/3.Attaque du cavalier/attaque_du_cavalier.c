@@ -5,7 +5,7 @@ typedef int		t_bool;
 #define FALSE	0
 
 char	scan_arr(char arr[8][8]);
-t_bool	check_moves(int knight_x, int knight_y, char arr[8][8]);
+t_bool	check_moves(int x, int y, char arr[8][8]);
 
 int	main(void)
 {
