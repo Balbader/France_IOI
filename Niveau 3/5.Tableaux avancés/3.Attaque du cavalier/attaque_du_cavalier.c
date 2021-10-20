@@ -10,28 +10,32 @@ t_bool	check_moves(int knight_x, int knight_y, char arr[8][8]);
 int	main(void)
 {
 	char	arr[8][8];
-	int	i;
-	int	j;
+	int 	check;
+	int		count;
+	int		i;
+	int		j;
 
 	scan_arr(arr);
+	count = 0;
 	i = 0;
 	while (i < 8)
 	{
 		j = 0;
 		while (j < 8)
 		{
+			if (arr[i][j] == '.' || (arr[i][j] >= 'a' && arr[i][j] <= 'z'))
+				count++;
 			if (arr[i][j] == 'C')
 			{
-				if (check_moves(i, j, arr) == FALSE)
-					j++;
-				if (check_moves(i, j, arr) == TRUE)
+				check = check_moves(i, j, arr);
+				if (check == FALSE)
 				{
-					printf("yes\n");
-					return (0);
+					count++;
+					j++;
 				}
 				else
 				{
-					printf("no\n");
+					printf("yes\n");
 					return (0);
 				}
 			}
@@ -39,6 +43,8 @@ int	main(void)
 		}
 		i++;
 	}
+	if (count == 64)
+		printf("no\n");
 	return (0);
 }
 
@@ -62,7 +68,7 @@ char  scan_arr(char arr[8][8])
 	return (**arr);
 }
 
-t_bool   check_moves(int knight_x, int knight_y, char arr[8][8])
+t_bool   check_moves(int x, int y, char arr[8][8])
 {
 	int      x_move[8] = {2, 1, -1, -2, -2, -1, 1, 2};
 	int      y_move[8] = {1, 2, 2, 1, -1, -2, -2, -1};
@@ -73,11 +79,11 @@ t_bool   check_moves(int knight_x, int knight_y, char arr[8][8])
 	i = 0;
 	while (i < 8 && j < 8)
 	{
-		if ((knight_x < 0) || (knight_x > 8)
-				|| (knight_y < 0) || (knight_y > 8))
+		if ((x < 0) || (x > 8) || (y < 0) || (y > 8))
 			return (' ');
-		if (arr[knight_x + x_move[i]][knight_y + y_move[j]] >= 'a'
-				&& arr[knight_x + x_move[i]][knight_y + y_move[j]] <= 'z')
+
+		if (arr[x + x_move[i]][y + y_move[j]] >= 'a'
+				&& arr[x + x_move[i]][y + y_move[j]] <= 'z')
 			return (TRUE);
 		j++;
 		i++;
