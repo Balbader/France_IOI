@@ -70,21 +70,18 @@ t_bool   check_moves(int x, int y, char arr[8][8])
 	i = 0;
 	while (i < 8 && j < 8)
 	{
-		 /*dans le cas ou le cavalier bouffe un pion adverse*/
-		if (arr[x + x_move[i]][y + y_move[j]] >= 'a'
-				&& arr[x + x_move[i]][y + y_move[j]] <= 'z')
+		/* S'assuer que le cavalier ne sort pas de l'echiquier*/
+		if ((0 <= x + x_move[i] && x + x_move[i] < 8)
+				&& (0 <= y + y_move[j] && y + y_move[j] < 8))
 		{
-			return (TRUE);
+			/*dans le cas ou le cavalier bouffe un pion adverse*/
+			if (arr[x + x_move[i]][y + y_move[j]] >= 'a'
+					&& arr[x + x_move[i]][y + y_move[j]] <= 'z')
+			{
+				return (TRUE);
+			}
+
 		}
-
-		 /*dans le cas ou le cavalier sort de l'echiquier*/
-		/*if (arr[x + x_move[i]][y + y_move[j]] < 0*/
-				/*|| arr[x + x_move[i]][y + y_move[j]] > 8)*/
-		/*{*/
-			/*i++;*/
-			/*j++;*/
-		/*}*/
-
 		j++;
 		i++;
 	}
