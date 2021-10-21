@@ -30,10 +30,6 @@ int	main(void)
 					printf("yes\n");
 					return (0);
 				}
-				else
-				{
-					j++;
-				}
 			}
 			j++;
 		}
@@ -74,18 +70,21 @@ t_bool   check_moves(int x, int y, char arr[8][8])
 	i = 0;
 	while (i < 8 && j < 8)
 	{
-		 /*dans le cas ou le cavalier sort de l'echiquier*/
-		if (arr[x + x_move[i]][y + y_move[j]] < 0
-				|| arr[x + x_move[i]][y + y_move[j]] > 8)
-		{
-			i++;
-			j++;
-		}
-
 		 /*dans le cas ou le cavalier bouffe un pion adverse*/
 		if (arr[x + x_move[i]][y + y_move[j]] >= 'a'
 				&& arr[x + x_move[i]][y + y_move[j]] <= 'z')
+		{
 			return (TRUE);
+		}
+
+		 /*dans le cas ou le cavalier sort de l'echiquier*/
+		/*if (arr[x + x_move[i]][y + y_move[j]] < 0*/
+				/*|| arr[x + x_move[i]][y + y_move[j]] > 8)*/
+		/*{*/
+			/*i++;*/
+			/*j++;*/
+		/*}*/
+
 		j++;
 		i++;
 	}
