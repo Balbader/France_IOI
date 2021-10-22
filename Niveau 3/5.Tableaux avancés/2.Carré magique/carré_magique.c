@@ -5,6 +5,7 @@ int		counter_y(int nbr, int grid[20][20]);
 int		diag_x(int nbr, int grid[20][20]);
 int		diag_y(int nbr, int grid[20][20]);
 void	check_res(int nbr, int *grid);
+void	check_grid(int nbr, int grid[20][20]);
 
 int	main(void)
 {
@@ -27,6 +28,8 @@ int	main(void)
 		}
 		i++;
 	}
+	/*check_grid(nbr, grid);*/
+
 	i = 0;
 	while (i <= (nbr * 2) + 2)
 	{
@@ -42,6 +45,28 @@ int	main(void)
 	}
 	check_res(nbr, res);
 	return (0);
+}
+
+void	check_grid(int nbr, int grid[nbr][nbr])
+{
+	int		row;
+	int		col;
+
+	row = 0;
+	while (row < nbr)
+	{
+		col = 0;
+		while (col < nbr)
+		{
+			if (grid[row][col] == grid[row][col] + 1)
+			{
+				printf("no\n");
+				break;
+			}
+			col++;
+		}
+		row++;
+	}
 }
 
 void	check_res(int nbr, int *grid)
@@ -68,7 +93,7 @@ void	check_res(int nbr, int *grid)
 
 }
 
-int	counter_x(int nbr, int grid[20][20])
+int	counter_x(int nbr, int grid[nbr][nbr])
 {
 	int		count;
 	int		temp;
@@ -92,7 +117,7 @@ int	counter_x(int nbr, int grid[20][20])
 	return (temp);
 }
 
-int	counter_y(int nbr, int grid[20][20])
+int	counter_y(int nbr, int grid[nbr][nbr])
 {
 	int		count;
 	int		temp;
@@ -116,7 +141,7 @@ int	counter_y(int nbr, int grid[20][20])
 	return (temp);
 }
 
-int	diag_x(int nbr, int grid[20][20])
+int	diag_x(int nbr, int grid[nbr][nbr])
 {
 	int		count;
 	int		i;
@@ -138,7 +163,7 @@ int	diag_x(int nbr, int grid[20][20])
 	return (count);
 }
 
-int	diag_y(int nbr, int grid[20][20])
+int	diag_y(int nbr, int grid[nbr][nbr])
 {
 	int		count;
 	int		i;
