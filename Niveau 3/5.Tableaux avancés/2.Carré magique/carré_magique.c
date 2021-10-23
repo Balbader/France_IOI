@@ -1,10 +1,15 @@
 #include <stdio.h>
 
-int      counter_x(int nbr, int grid[20][20]);
-int      counter_y(int nbr, int grid[20][20]);
-int      diag_x(int nbr, int grid[20][20]);
-int      diag_y(int nbr, int grid[20][20]);
-void  check_res(int nbr, int *grid);
+typedef int		t_bool;
+#define TRUE	1
+#define FALSE	0
+
+t_bool	check_grid(int nbr, int grid[20][20]);
+int     counter_x(int nbr, int grid[20][20]);
+int     counter_y(int nbr, int grid[20][20]);
+int		diag_x(int nbr, int grid[20][20]);
+int		diag_y(int nbr, int grid[20][20]);
+void	check_res(int nbr, int *grid);
 
 int   main(void)
 {
@@ -27,6 +32,13 @@ int   main(void)
       }
       i++;
    }
+
+   if (check_grid(nbr, grid) == FALSE)
+   {
+	   printf("no\n");
+	   return (0);
+   }
+
    i = 0;
    while (i <= (nbr * 2) + 2)
    {
@@ -42,6 +54,54 @@ int   main(void)
    }
    check_res(nbr, res);
    return (0);
+}
+
+t_bool	check_grid(int	nbr, int grid[20][20])
+{
+	int		temp[nbr * nbr];
+	int		count;
+	int		i;
+	int		j;
+	int		k;
+
+	k = 0;
+	i = 0;
+	while (i < 3)
+	{
+		j = 0;
+		while (j < 3)
+		{
+			temp[k] = grid[i][j];
+			k++;
+			j++;
+		}
+		i++;
+	}
+
+	i = 0;
+	while (i < nbr)
+	{
+		printf("%d ", temp[i]);
+		i++;
+	}
+	printf("\n");
+
+	count = sizeof(temp) / sizeof(temp[0]);
+	i = 0;
+	while (i < count)
+	{
+		j = i + 1;
+		while (j < count)
+		{
+			if (temp[i] == temp[j])
+			{
+				return FALSE;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (TRUE);
 }
 
 void  check_res(int nbr, int *grid)
