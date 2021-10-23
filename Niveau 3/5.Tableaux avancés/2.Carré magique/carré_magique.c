@@ -33,6 +33,7 @@ int   main(void)
 		i++;
 	}
 
+	// Vérifier si chaque chiffre apparaît exactement une fois dans la grille
 	if (check_grid(nbr, grid) == FALSE)
 	{
 		printf("no\n");
@@ -58,6 +59,7 @@ int   main(void)
 	return (0);
 }
 
+// Vérifier si chaque chiffre apparaît exactement une fois dans la grille
 t_bool	check_grid(int	nbr, int grid[20][20])
 {
 	int		temp[nbr * nbr];
@@ -97,6 +99,7 @@ t_bool	check_grid(int	nbr, int grid[20][20])
 	return (TRUE);
 }
 
+// Comparer les sommes obtenues
 void  check_res(int nbr, int *grid)
 {
 	int      temp;
@@ -121,6 +124,7 @@ void  check_res(int nbr, int *grid)
 
 }
 
+// Somme de chaque rangée
 int   counter_x(int nbr, int grid[20][20])
 {
 	int      count;
@@ -145,6 +149,7 @@ int   counter_x(int nbr, int grid[20][20])
 	return (temp);
 }
 
+// Somme de chaque colone
 int   counter_y(int nbr, int grid[20][20])
 {
 	int      count;
@@ -169,6 +174,7 @@ int   counter_y(int nbr, int grid[20][20])
 	return (temp);
 }
 
+// Somme diagonale gauche vers droite
 int   diag_x(int nbr, int grid[20][20])
 {
 	int      count;
@@ -191,6 +197,7 @@ int   diag_x(int nbr, int grid[20][20])
 	return (count);
 }
 
+// Somme diagonale droite vers gauche
 int   diag_y(int nbr, int grid[20][20])
 {
 	int      count;
