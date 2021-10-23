@@ -33,7 +33,6 @@ int   main(void)
 		i++;
 	}
 
-	// Vérifier si chaque chiffre apparaît exactement une fois dans la grille
 	if (check_grid(nbr, grid) == FALSE)
 	{
 		printf("no\n");
