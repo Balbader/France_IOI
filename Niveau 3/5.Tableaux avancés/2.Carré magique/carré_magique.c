@@ -120,7 +120,6 @@ void  check_res(int nbr, int *grid)
 		printf("yes\n");
 	else
 		printf("no\n");
-
 }
 
 // Somme de chaque rangée
@@ -148,7 +147,7 @@ int   counter_x(int nbr, int grid[20][20])
 	return (temp);
 }
 
-// Somme de chaque colone
+// Somme de chaque colonne
 int   counter_y(int nbr, int grid[20][20])
 {
 	int      count;
