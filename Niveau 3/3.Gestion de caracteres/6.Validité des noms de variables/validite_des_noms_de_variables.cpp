@@ -3,7 +3,13 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <vector>
 
 int main(void) {
+	int nb;
+	std::cin >> nb;
+	std::cin.ignore();
+
 	return 0;
 }
