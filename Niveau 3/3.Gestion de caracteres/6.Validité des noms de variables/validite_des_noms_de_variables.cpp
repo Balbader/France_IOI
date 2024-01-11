@@ -21,11 +21,10 @@ bool checkStr(std::string str) {
 	int i = 1;
 
 	while (str[i]) {
-		if ((str[i] == '_' || isalpha(str[i]) ||  isalnum(str[i])))
+		if ((str[i] == '_' || isalpha(str[i]) ||  isdigit(str[i])))
 			++i;
 		else
 			return 1;
-		++i;
 	}
 
 	return 0;
