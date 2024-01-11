@@ -50,6 +50,7 @@ int main() {
     std::string text;
     std::getline(std::cin, text);
 
+	// count the tot amount of letters in the string
     int letterCount = countTotLetters(text);
     std::cout << "Letter count :" << letterCount << std::endl;
 
@@ -62,17 +63,19 @@ int main() {
     }
 
     std::vector<float> averageOccurrence(letterCount);
-
     for (int i = 0; i < 26; ++i) {
-        averageOccurrence.push_back(totLetterOccurrences[i] / letterCount);
+		float tmp = totLetterOccurrences[i] / letterCount;
+		std::cout << "tmp : " << tmp << std::endl;
+        averageOccurrence.push_back(tmp);
+		// std::cout << "averageOccurrence[i] : " << static_cast<float>(averageOccurrence[i]) << std::endl;
     }
 
-    std::cout << "\n";
-
+    std::cout << "\naverageOccurrence:" << std::endl;
     c = 'a';
     for (int occurrence :  averageOccurrence) {
         std::cout << c << " : " << occurrence << std::endl;
         ++c;
     }
+
     return 0;
 }
