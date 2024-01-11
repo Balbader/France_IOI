@@ -19,6 +19,7 @@ int countTotLetters(const std::string& text) {
     return letter_count;
 }
 
+
 // Count the tot occurrence of each letter and return a vector representing the tot amount of occurrences of
 // each letter of the alphabet in a given text
 std::vector<int> countEachLetter(const std::string& text) {
@@ -37,6 +38,7 @@ std::vector<int> countEachLetter(const std::string& text) {
     return letter_count;
 }
 
+
 int main() {
 
     // initialize a vector and fill it with alphabet letters
@@ -49,12 +51,28 @@ int main() {
     std::getline(std::cin, text);
 
     int letterCount = countTotLetters(text);
+    std::cout << "Letter count :" << letterCount << std::endl;
+
     std::vector<int> totLetterOccurrences = countEachLetter(text);
-    std::vector<float> averageOccurrence(letterCount, 0);
+    char c = 'a';
+    std::cout << "\ntotLetterOccurrences:" << std::endl;
+    for (int occurrence :  totLetterOccurrences) {
+        std::cout << c << " : " << occurrence << std::endl;
+        ++c;
+    }
+
+    std::vector<float> averageOccurrence(letterCount);
 
     for (int i = 0; i < 26; ++i) {
-        averageOccurrence[i] = static_cast<float>(totLetterOccurrences[i] / letterCount);
-        std::cout << averageOccurrence[i] << std::endl;
+        averageOccurrence.push_back(totLetterOccurrences[i] / letterCount);
+    }
+
+    std::cout << "\n";
+
+    c = 'a';
+    for (int occurrence :  averageOccurrence) {
+        std::cout << c << " : " << occurrence << std::endl;
+        ++c;
     }
     return 0;
 }
