@@ -62,10 +62,11 @@ int main() {
         ++c;
     }
 
+	std::cout << "\n";
     std::vector<float> averageOccurrence(letterCount);
     for (int i = 0; i < 26; ++i) {
 		float tmp = totLetterOccurrences[i] / letterCount;
-		std::cout << "tmp : " << tmp << std::endl;
+		std::cout << "tmp : " << static_cast<float>(tmp) << std::endl;
         averageOccurrence.push_back(tmp);
 		// std::cout << "averageOccurrence[i] : " << static_cast<float>(averageOccurrence[i]) << std::endl;
     }
