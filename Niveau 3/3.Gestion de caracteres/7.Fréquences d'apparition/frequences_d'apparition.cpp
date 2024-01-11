@@ -20,9 +20,11 @@ int countTotLetters(const std::string& text) {
 }
 
 
-// Count the tot occurrence of each letter and return a vector representing the tot amount of occurrences of
+// Count the tot occurrence of each letter and return a vector
+// representing the tot amount of occurrences of
 // each letter of the alphabet in a given text
 std::vector<int> countEachLetter(const std::string& text) {
+
     // Initialize a vector of 26 integers to store the counts for each letter (a-z)
     std::vector<int> letter_count(26, 0);
 
