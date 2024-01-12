@@ -68,7 +68,7 @@ int main() {
 		float tmp = totLetterOccurrences[i] / letterCount;
 		std::cout << "tmp : " << static_cast<float>(tmp) << std::endl;
         averageOccurrence.push_back(tmp);
-		// std::cout << "averageOccurrence[i] : " << static_cast<float>(averageOccurrence[i]) << std::endl;
+		std::cout << "averageOccurrence[i] : " << static_cast<float>(averageOccurrence[i]) << std::endl;
     }
 
     std::cout << "\naverageOccurrence:" << std::endl;
