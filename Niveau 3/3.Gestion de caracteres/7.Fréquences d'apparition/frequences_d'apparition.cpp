@@ -56,27 +56,18 @@ int main() {
 
     std::vector<int> totLetterOccurrences = countEachLetter(text);
     char c = 'a';
+	float tmp;
     std::cout << "\ntotLetterOccurrences:" << std::endl;
     for (int occurrence :  totLetterOccurrences) {
-        std::cout << c << " : " << occurrence << std::endl;
+		tmp = (occurrence / letterCount);
+		std::cout << "occurrence / letterCount : "
+				  << static_cast<float>(occurrence) << " / "
+				  << static_cast<float>(letterCount) << " = "
+				  << tmp << std::endl;
+
         ++c;
     }
 
-	std::cout << "\n";
-    std::vector<float> averageOccurrence(letterCount);
-    for (int i = 0; i < 26; ++i) {
-		float tmp = totLetterOccurrences[i] / letterCount;
-		std::cout << "tmp : " << static_cast<float>(tmp) << std::endl;
-        averageOccurrence.push_back(tmp);
-		// std::cout << "averageOccurrence[i] : " << static_cast<float>(averageOccurrence[i]) << std::endl;
-    }
-
-    std::cout << "\naverageOccurrence:" << std::endl;
-    c = 'a';
-    for (int occurrence :  averageOccurrence) {
-        std::cout << c << " : " << occurrence << std::endl;
-        ++c;
-    }
 
     return 0;
 }
