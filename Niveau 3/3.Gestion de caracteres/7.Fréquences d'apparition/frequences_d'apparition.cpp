@@ -39,6 +39,7 @@ std::vector<int> countEachLetter(const std::string& text) {
     return letter_count;
 }
 
+
 int main() {
 
     // initialize a vector and fill it with alphabet letters
