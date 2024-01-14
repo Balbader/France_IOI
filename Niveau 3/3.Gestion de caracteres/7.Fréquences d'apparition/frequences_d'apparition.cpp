@@ -59,12 +59,8 @@ int main() {
 	float tmp;
     std::cout << "\ntotLetterOccurrences:" << std::endl;
     for (int occurrence :  totLetterOccurrences) {
-		tmp = (occurrence / letterCount);
-		std::cout << "occurrence / letterCount : "
-				  << static_cast<float>(occurrence) << " / "
-				  << static_cast<float>(letterCount) << " = "
-				  << tmp << std::endl;
-
+		tmp = (static_cast<float>(occurrence) / static_cast<float>(letterCount));
+		std::cout << tmp << std::endl;
         ++c;
     }
 
