@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <string>
 #include <cctype>
@@ -18,11 +19,11 @@ int countTotLetters(const std::string& text) {
 
 std::vector<int> countEachLetter(const std::string& text) {
 
-    std::vector<int> letter_count(26, 0);
+    std::vector<int> letter_count(26);
 
-    for (char ch : text) {
-        if (std::isalpha(ch)) {
-            letter_count[std::tolower(ch) - 'a']++;
+    for (char c : text) {
+        if (std::isalpha(c)) {
+            letter_count[std::tolower(c) - 'a']++;
         }
     }
 
@@ -40,15 +41,13 @@ int main() {
     std::getline(std::cin, text);
 
     int letterCount = countTotLetters(text);
-    std::cout << "Letter count :" << letterCount << std::endl;
-
     std::vector<int> totLetterOccurrences = countEachLetter(text);
+
     char c = 'a';
-	float tmp;
-    std::cout << "\ntotLetterOccurrences:" << std::endl;
+	double tmp;
     for (int occurrence :  totLetterOccurrences) {
-		tmp = (static_cast<float>(occurrence) / static_cast<float>(letterCount));
-		std::cout << tmp << std::endl;
+		tmp = (static_cast<double>(occurrence) / static_cast<double>(letterCount));
+		std::cout << std::fixed << std::setprecision(6) << tmp << std::endl;
         ++c;
     }
 
