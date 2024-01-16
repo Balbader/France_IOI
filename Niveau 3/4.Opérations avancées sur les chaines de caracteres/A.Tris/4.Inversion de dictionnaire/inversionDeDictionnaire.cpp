@@ -4,6 +4,7 @@
 #include <vector>
 
 int main(void) {
+
 	int nb;
 	std::string tmp;
 	std::vector<std::string> langs;
