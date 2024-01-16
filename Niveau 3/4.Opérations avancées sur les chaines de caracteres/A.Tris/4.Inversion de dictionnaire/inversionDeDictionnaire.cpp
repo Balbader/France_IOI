@@ -15,8 +15,8 @@ int main(void) {
 	for (int i = 0; i < nb; i++) {
 
 		std::getline(std::cin, tmp);
-		std::istringstream iss(tmp);
 
+		std::istringstream iss(tmp);
 		while (iss >> language)
 			langs.push_back(language);
 
