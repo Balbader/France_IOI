@@ -3,9 +3,9 @@
 #include <string>
 #include <vector>
 
-char* cpyFirstWd(std::string str) {
+std::string cpyFirstWd(std::string str) {
 
-	char* firstWd = new char[str.length() + 1];
+	std::string firstWd = new char[str.length() + 1];
 
 	for (int i = 0; i < str.length(); ++i) {
 		if (str[i] == ' ') {
@@ -17,9 +17,9 @@ char* cpyFirstWd(std::string str) {
 	return firstWd;
 }
 
-char* cpySecondWd(std::string str) {
+std::string cpySecondWd(std::string str) {
 
-	char* secondWd = new char[str.length() + 1];
+	std::string secondWd;
 
 	int i = 0;
 	while (str[i] != ' ') {
@@ -41,11 +41,11 @@ int main(void) {
 	int nb;
 	std::cin >> nb;
 	std::cin.ignore();
-	std::vector<std::vector<std::string>> dictionary;
-	std::vector<std::string> tmp;
+	std::vector<std::string> dictionary;
+	std::string tmp;
 
-	char* firstWd;
-	char* secondWd;
+	std::string firstWd;
+	std::string secondWd;
 
 	for (int i = 0; i < nb; ++i) {
 
@@ -54,20 +54,15 @@ int main(void) {
 
 		firstWd = cpyFirstWd(str);
 		secondWd = cpySecondWd(str);
-		tmp.push_back(secondWd);
-		tmp.push_back(firstWd);
+		std::cout << firstWd << " " << secondWd << std::endl;
+		// tmp = secondWd + " " + firstWd;
+		// std::cout << "tmp: " << tmp << std::endl;
 		dictionary.push_back(tmp);
 	}
 
-	for (const auto& row : dictionary) {
-		for (const auto& word : row) {
-			std::cout << word << " ";
-		}
-		std::cout << std::endl;
-	}
-
-	delete[] firstWd;
-	delete[] secondWd;
+	// for (int i = nb - 1; i >= 0; --i) {
+	// 	std::cout << dictionary[i] << std::endl;
+	// }
 
 	return 0;
 }
