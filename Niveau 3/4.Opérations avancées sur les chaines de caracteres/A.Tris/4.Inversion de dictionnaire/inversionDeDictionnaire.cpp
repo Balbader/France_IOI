@@ -2,25 +2,26 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <array>
 
-std::string firstWD(std::string str) {
+char* firstWD(std::string str) {
 
-	std::string first;
+	char* first = new char[str.length() + 1];
 
 	for (int i = 0; i < str.length(); ++i) {
 		first[i] = str[i];
 		if (str[i] == ' ') {
 			first[i] = '\0';
-			std::cout << "firstWD: " << first << std::endl;
 			return first;
 		}
 	}
+
 	return first;
 }
 
-std::string secondWD(std::string str) {
+char* secondWD(std::string str) {
 
-	std::string second;
+	char* second = new char[str.length() + 1];
 	int j = 0;
 	int i = 0;
 
@@ -34,8 +35,8 @@ std::string secondWD(std::string str) {
 		++i;
 		++j;
 	}
+	second[j] = '\0';
 
-	std::cout << "secondWD: " << second << std::endl;
 	return second;
 }
 
@@ -45,6 +46,8 @@ int main(void) {
 	std::cin >> nb;
 	std::cin.ignore();
 
+	std::string dictionnary[nb];
+
 	for (int i = 0; i < nb; ++i) {
 
 		std::string str;
@@ -53,16 +56,15 @@ int main(void) {
 		std::string tmp;
 
 		std::getline(std::cin, str);
-		// std::cout << str << std::endl;
 
 		first = firstWD(str);
-		// std::cout << "first : " << first << std::endl;
-
 		second = secondWD(str);
-		// std::cout << "second : " << second << std::endl;
-
 		tmp = second + " " + first;
-		std::cout << "tmp : " << tmp << std::endl;
+		dictionnary[i] = tmp;
+	}
+
+	for (int i = nb - 1; i >= 0; --i) {
+		std::cout << dictionnary[i] << std::endl;
 	}
 
 	return 0;
