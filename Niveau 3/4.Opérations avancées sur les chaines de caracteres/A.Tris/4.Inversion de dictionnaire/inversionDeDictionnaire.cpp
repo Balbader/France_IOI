@@ -5,7 +5,7 @@
 
 char* cpyFirstWd(std::string str) {
 
-	char firstWd[str.length()];
+	char* firstWd = new char[str.length() + 1];
 
 	for (int i = 0; i < str.length(); ++i) {
 		if (str[i] == ' ') {
@@ -14,35 +14,51 @@ char* cpyFirstWd(std::string str) {
 		}
 		firstWd[i] = str[i];
 	}
-	return str;
+	return firstWd;
+}
+
+char* cpySecondWd(std::string str) {
+
+	char* secondWd = new char[str.length() + 1];
+
+	int i = 0;
+	while (str[i] != ' ') {
+	  	++i;
+	}
+
+	++i;
+
+	int j = 0;
+	while (str[i]) {
+		secondWd[j++] = str[i++];
+	}
+	secondWd[j] = '\0';
+	return secondWd;
 }
 
 int main(void) {
-	std::string str = "Hello World";
-	char
+
+	int nb;
+	std::cin >> nb;
+	std::cin.ignore();
+
+	char* firstWd;
+	char* secondWd;
+
+	for (int i = 0; i < nb; ++i) {
+
+		std::string str;
+		std::getline(std::cin, str);
+
+		firstWd = cpyFirstWd(str);
+		secondWd = cpySecondWd(str);
+
+		std::cout << secondWd << " " << firstWd << std::endl;
+	}
+
+	delete[] firstWd;
+	delete[] secondWd;
+
 	return 0;
 }
 
-// int main(void) {
-
-// 	int nb;
-// 	std::string tmp;
-// 	std::vector<std::string> langs;
-// 	std::string language;
-
-// 	std::cin >> nb;
-// 	std::cin.ignore();
-
-// 	for (int i = 0; i < nb; i++) {
-
-// 		std::getline(std::cin, tmp);
-
-// 		std::istringstream iss(tmp);
-// 		while (iss >> language)
-// 			langs.push_back(language);
-
-// 		std::cout << langs[i] << std::endl;
-// 	}
-
-// 	return (0);
-// }
