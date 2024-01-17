@@ -41,6 +41,8 @@ int main(void) {
 	int nb;
 	std::cin >> nb;
 	std::cin.ignore();
+	std::vector<std::vector<std::string>> dictionary;
+	std::vector<std::string> tmp;
 
 	char* firstWd;
 	char* secondWd;
@@ -52,8 +54,16 @@ int main(void) {
 
 		firstWd = cpyFirstWd(str);
 		secondWd = cpySecondWd(str);
+		tmp.push_back(secondWd);
+		tmp.push_back(firstWd);
+		dictionary.push_back(tmp);
+	}
 
-		std::cout << secondWd << " " << firstWd << std::endl;
+	for (const auto& row : dictionary) {
+		for (const auto& word : row) {
+			std::cout << word << " ";
+		}
+		std::cout << std::endl;
 	}
 
 	delete[] firstWd;
