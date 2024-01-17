@@ -3,37 +3,40 @@
 #include <string>
 #include <vector>
 
-std::string cpyFirstWd(std::string str) {
+std::string firstWD(std::string str) {
 
-	std::string firstWd = new char[str.length() + 1];
+	std::string first;
 
 	for (int i = 0; i < str.length(); ++i) {
+		first[i] = str[i];
 		if (str[i] == ' ') {
-			firstWd[i] = '\0';
-			return firstWd;
+			first[i] = '\0';
+			std::cout << "firstWD: " << first << std::endl;
+			return first;
 		}
-		firstWd[i] = str[i];
 	}
-	return firstWd;
+	return first;
 }
 
-std::string cpySecondWd(std::string str) {
+std::string secondWD(std::string str) {
 
-	std::string secondWd;
-
+	std::string second;
+	int j = 0;
 	int i = 0;
-	while (str[i] != ' ') {
-	  	++i;
-	}
+
+	while (str[i] != ' ')
+		++i;
 
 	++i;
 
-	int j = 0;
 	while (str[i]) {
-		secondWd[j++] = str[i++];
+		second[j] = str[i];
+		++i;
+		++j;
 	}
-	secondWd[j] = '\0';
-	return secondWd;
+
+	std::cout << "secondWD: " << second << std::endl;
+	return second;
 }
 
 int main(void) {
@@ -41,29 +44,26 @@ int main(void) {
 	int nb;
 	std::cin >> nb;
 	std::cin.ignore();
-	std::vector<std::string> dictionary;
-	std::string tmp;
-
-	std::string firstWd;
-	std::string secondWd;
 
 	for (int i = 0; i < nb; ++i) {
 
 		std::string str;
+		std::string first;
+		std::string second;
+		std::string tmp;
+
 		std::getline(std::cin, str);
+		// std::cout << str << std::endl;
 
-		firstWd = cpyFirstWd(str);
-		secondWd = cpySecondWd(str);
-		std::cout << firstWd << " " << secondWd << std::endl;
-		// tmp = secondWd + " " + firstWd;
-		// std::cout << "tmp: " << tmp << std::endl;
-		dictionary.push_back(tmp);
+		first = firstWD(str);
+		// std::cout << "first : " << first << std::endl;
+
+		second = secondWD(str);
+		// std::cout << "second : " << second << std::endl;
+
+		tmp = second + " " + first;
+		std::cout << "tmp : " << tmp << std::endl;
 	}
-
-	// for (int i = nb - 1; i >= 0; --i) {
-	// 	std::cout << dictionary[i] << std::endl;
-	// }
 
 	return 0;
 }
-
