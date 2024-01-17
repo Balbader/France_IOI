@@ -8,7 +8,7 @@ char* firstWD(std::string str) {
 
 	char* first = new char[str.length() + 1];
 
-	for (int i = 0; i < str.length(); ++i) {
+	for (unsigned int i = 0; i < str.length(); ++i) {
 		first[i] = str[i];
 		if (str[i] == ' ') {
 			first[i] = '\0';
@@ -22,8 +22,8 @@ char* firstWD(std::string str) {
 char* secondWD(std::string str) {
 
 	char* second = new char[str.length() + 1];
-	int j = 0;
-	int i = 0;
+	unsigned int j = 0;
+	unsigned int i = 0;
 
 	while (str[i] != ' ')
 		++i;
