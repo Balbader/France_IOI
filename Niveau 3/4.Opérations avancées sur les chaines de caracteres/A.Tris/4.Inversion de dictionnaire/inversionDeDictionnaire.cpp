@@ -32,8 +32,6 @@ char* secondWD(std::string str) {
 
 	while (str[i]) {
 		second[j++] = str[i++];
-		// ++i;
-		// ++j;
 	}
 	second[j] = '\0';
 
