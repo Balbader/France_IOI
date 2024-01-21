@@ -2,23 +2,69 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <array>
+
+char* firstWD(std::string str) {
+
+	char* first = new char[str.length() + 1];
+
+	for (unsigned int i = 0; i < str.length(); ++i) {
+		first[i] = str[i];
+		if (str[i] == ' ') {
+			first[i] = '\0';
+			return first;
+		}
+	}
+
+	return first;
+}
+
+char* secondWD(std::string str) {
+
+	char* second = new char[str.length() + 1];
+	unsigned int j = 0;
+	unsigned int i = 0;
+
+	while (str[i] != ' ')
+		++i;
+
+	++i;
+
+	while (str[i]) {
+		second[j++] = str[i++];
+	}
+	second[j] = '\0';
+
+	return second;
+}
 
 int main(void) {
-	int nb;
-	std::string tmp;
-	std::vector<std::string> langs;
-	std::string language;
 
+	int nb;
 	std::cin >> nb;
 	std::cin.ignore();
 
-	for (int i = 0; i < nb; i++) {
-		std::getline(std::cin, tmp);
-		std::istringstream iss(tmp);
-		while (iss >> language)
-			langs.push_back(language);
-		std::cout << langs[i] << std::endl;
+	std::string dictionnary[nb];
+
+	for (int i = 0; i < nb; ++i) {
+
+		std::string str;
+		std::string first;
+		std::string second;
+		std::string tmp;
+
+		std::getline(std::cin, str);
+
+		first = firstWD(str);
+		second = secondWD(str);
+		tmp = second + " " + first;
+		dictionnary[i] = tmp;
 	}
 
-	return (0);
+	for (int i = nb - 1; i >= 0; --i) {
+		std::cout << dictionnary[i] << std::endl;
+	}
+
+	return 0;
+>>>>>>> 7d6895e7566a4e686e1f1dde030fef164abbecba
 }
