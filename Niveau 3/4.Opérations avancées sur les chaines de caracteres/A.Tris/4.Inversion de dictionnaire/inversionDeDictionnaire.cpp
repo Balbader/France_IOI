@@ -66,5 +66,4 @@ int main(void) {
 	}
 
 	return 0;
->>>>>>> 7d6895e7566a4e686e1f1dde030fef164abbecba
 }
