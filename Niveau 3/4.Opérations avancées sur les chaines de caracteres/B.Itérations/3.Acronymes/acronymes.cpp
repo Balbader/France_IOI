@@ -26,9 +26,17 @@ int countWords(const std::string& str) {
 int main() {
 
     std::string ref;
-    int nbOfTitles;
+    // int nbOfTitles;
     std::string tmp;
     int wdCount;
+
+    std::getline(std::cin, ref);
+    std::getline(std::cin, tmp);
+
+    wdCount = countWords(tmp);
+    std::cout << wdCount << std::endl;
+
+    std::cout << ref.length() << std::endl; 
 
     return 0;
 }
