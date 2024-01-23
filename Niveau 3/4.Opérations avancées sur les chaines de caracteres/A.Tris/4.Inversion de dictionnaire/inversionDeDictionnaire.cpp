@@ -61,7 +61,18 @@ int main(void) {
 		dictionnary[i] = tmp;
 	}
 
-	for (int i = nb - 1; i >= 0; --i) {
+
+    for (int i = 0; i < nb - 1; i++) {
+        for (int j = 0; j < nb - i - 1; j++) {
+            if (dictionnary[j] > dictionnary[j + 1]) {
+                std::string tmp = dictionnary[j];
+                dictionnary[j] = dictionnary[j + 1];
+                dictionnary[j + 1] = tmp;
+            }
+        }
+    }
+
+	for (int i = 0; i < nb; ++i) {
 		std::cout << dictionnary[i] << std::endl;
 	}
 
