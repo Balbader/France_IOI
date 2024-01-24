@@ -10,7 +10,6 @@ int main() {
     std::string newPage;
 
     std::cin >> nbOfPages;
-    std::cin.ignore();
 
     for (int i = 1; i <= nbOfPages; i++) {
 
@@ -40,6 +39,7 @@ int main() {
                 ++j;
             }
         }
+        std::cout << "\n";
     }
     return 0;
 }
