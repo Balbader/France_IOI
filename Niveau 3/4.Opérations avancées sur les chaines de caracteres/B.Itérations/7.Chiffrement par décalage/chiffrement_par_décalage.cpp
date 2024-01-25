@@ -2,11 +2,10 @@
 #include <iostream>
 #include <string>
 #include <string.h>
-#include <vector>
 
 int main() {
 
-    int nbOfPages;
+    int nbOfPages = 0;
     std::string newPage;
 
     std::cin >> nbOfPages;
@@ -15,30 +14,28 @@ int main() {
 
         std::getline(std::cin, newPage);
 
-        if (i % 2 == 0) {
+        int j = 0;
+        while (newPage[j]) {
 
-            int j = 0;
+            if (isalpha(newPage[j])) {
 
-            while (newPage[j]) {
-                if (isalpha(newPage[j])) {
+                if (i % 2 == 0) {
                     char c = newPage[j] - (i * 3);
                     std::cout << c;
                 }
-                ++j;
-            }
 
-        } else if (i % 2 != 0) {
-
-            int j = 0;
-
-            while (newPage[j]) {
-                if (isalpha(newPage[j])) {
+                else if (i % 2 != 0) {
                     char c = newPage[j] + (i * -5);
                     std::cout << c;
                 }
-                ++j;
             }
+            
+            else {
+                std::cout << newPage[j];
+            }
+            ++j;
         }
+
         std::cout << "\n";
     }
     return 0;
