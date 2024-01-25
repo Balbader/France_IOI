@@ -3,40 +3,39 @@
 #include <string>
 #include <string.h>
 
+#define N 26
+
 int main() {
 
-    int nbOfPages = 0;
-    std::string newPage;
+    std::string s, t, s1, s2;
+    int n;
+    int x;
 
-    std::cin >> nbOfPages;
+    std::cin.tie(0);
+    std::cin>>n;
+    std::getline(std::cin,s);
 
-    for (int i = 1; i <= nbOfPages; i++) {
+    for(int t=2;t<=n;++t) {
+        std::getline(std::cin,s);
 
-        std::getline(std::cin, newPage);
+        if (t % 2==0)
+            x = t * 3;
+        else
+            x = -5 * t;
 
-        int j = 0;
-        while (newPage[j]) {
-
-            if (isalpha(newPage[j])) {
-
-                if (i % 2 == 0) {
-                    char c = newPage[j] - (i * 3);
-                    std::cout << c;
-                }
-
-                else if (i % 2 != 0) {
-                    char c = newPage[j] + (i * -5);
-                    std::cout << c;
-                }
+        for(unsigned int i = 0; i < s.length(); ++i) {
+            if(s[i]>='a' && s[i]<='z') {
+                std::cout << char((s[i] - 'a' - (x % N) + N) % N + 'a');
             }
-            
-            else {
-                std::cout << newPage[j];
+
+            else if(s[i]>='A' && s[i]<='Z') {
+                std::cout << char((s[i] - 'A' - (x % N) + N) % N + 'A');
             }
-            ++j;
+
+            else
+                std::cout << s[i];
         }
-
-        std::cout << "\n";
+        std::cout << std::endl;
     }
     return 0;
 }
