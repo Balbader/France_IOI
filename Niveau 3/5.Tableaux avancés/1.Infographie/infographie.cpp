@@ -4,8 +4,8 @@ void printChar(int l1, int c1, int l2, int c2, char c, int j)
 {
     if (j >= l1 && j <= l2 && j >= c1 && j <= c2)
         std::cout << c;
-    // else
-        // std::cout << ".";
+    else
+        std::cout << ".";
 }
 
 int main()
@@ -33,7 +33,7 @@ int main()
     for (int i = 0; i < lines; i++) {
         for (int j = 0; j < col; j++) {
             grid[i][j] = '.';
-            std::cout << grid[i][j];
+            // std::cout << grid[i][j];
             printChar(l1, c1, l2, c2, c, j);
         }
         std::cout << std::endl;
