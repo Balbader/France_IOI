@@ -23,20 +23,30 @@ int main()
     std::cin >> rectangles;
     std::cin.ignore();
 
+	char grid[lines][col];
+
     for (int i = 0; i < rectangles; i++) {
+
         std::cin >> l1 >> c1 >> l2 >> c2 >> c;
-        // std::cout << "entries: " << l1 << " " << c1 << " " << l2 << " " << c2 << " " << c << std::endl;
+
+		for (int i = 0; i < lines; i++) {
+			for (int j = 0; j < col; j++) {
+    			if (j >= l1 && j <= c1 && j >= l2 && j <= c2)
+						// grid[i][j] = c;
+						std::cout << c;
+				else
+						std::cout << '.';
+					// grid[i][j] = '.';
+			}
+			std::cout << std::endl;
+		}
     }
 
-    char grid[lines][col];
-
-    for (int i = 0; i < lines; i++) {
-        for (int j = 0; j < col; j++) {
-            grid[i][j] = '.';
-            // std::cout << grid[i][j];
-            printChar(l1, c1, l2, c2, c, j);
-        }
-        std::cout << std::endl;
-    }
+	for (int i = 0; i < lines; i++) {
+		for (int j = 0; j < col; j++) {
+			std::cout << grid[i][j];
+		}
+		std::cout << std::endl;
+	}
     return 0;
 }
