@@ -65,6 +65,7 @@ int main()
 
 	if (s1 != sum || s2 != sum) {
 		std::cout << "no" << std::endl;
+		return 0;
 	}
 
 	for (int i = 0; i < size; ++i) {
