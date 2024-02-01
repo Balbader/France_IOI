@@ -18,7 +18,7 @@ int main()
 				for (int k = 0; k < 8; ++k) {
 					if (i + x[k] >= 0 && i + x[k] < 8 && j + y[k] >= 0 && j + y[k] < 8) {
 						if (grid[i + x[k]][j + y[k]] >= 'a' && grid[i + x[k]][j + y[k]] >= 'z')
-						ans = true;
+							ans = true;
 					}
 				}
 			}
