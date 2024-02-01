@@ -77,7 +77,7 @@ int main()
 
 	for (int i = 1; i <= size * size; ++i) {
 		if (v[i] != 1) {
-			std::cout << no << std::endl;
+			std::cout << "no" << std::endl;
 			return 0;
 		}
 	}
