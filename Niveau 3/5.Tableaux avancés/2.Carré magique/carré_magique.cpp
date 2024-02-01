@@ -70,7 +70,7 @@ int main()
 
 	for (int i = 0; i < size; ++i) {
 		for (int j = 0; j < size; ++j) {
-			if (grid[i][j] >= 1 && grid[i][j <= size * size]) {
+			if (grid[i][j] >= 1 && grid[i][j] <= size * size) {
 				v[grid[i][j]]++;
 			}
 		}
