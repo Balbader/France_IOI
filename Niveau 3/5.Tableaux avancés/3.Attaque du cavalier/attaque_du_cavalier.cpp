@@ -12,11 +12,17 @@ int main()
 	}
 
 	bool ans = false;
+
 	for (int i = 0; i < 8; ++i) {
+
 		for (int j = 0; j < 8; ++j) {
-			if (grid[i][j] == 'c') {
+
+			if (grid[i][j] == 'C') {
+
 				for (int k = 0; k < 8; ++k) {
+
 					if (i + x[k] >= 0 && i + x[k] < 8 && j + y[k] >= 0 && j + y[k] < 8) {
+
 						if (grid[i + x[k]][j + y[k]] >= 'a' && grid[i + x[k]][j + y[k]] >= 'z')
 							ans = true;
 					}
