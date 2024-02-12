@@ -8,22 +8,22 @@ string s;
 
 void Compute()
 {
-   int l=s.length();
-   string t="";
-   bool check=false;
-   for(int i=0;i<l;)
+   int l = s.length();
+   string t = "";
+   bool check = false;
+   for(int i = 0; i < l; )
    {
-      if(s[i]==s[i+1])
+      if(s[i] == s[i+1])
       {
-         i+=2;
-         check=true;
+         i += 2;
+         check = true;
       }
       else
       {
-         t+=s[i++];
+         t += s[i++];
       }
    }
-   s=t;
+   s = t;
    if(check)
       Compute();
 }
@@ -32,8 +32,8 @@ int main()
 {
    ios_base::sync_with_stdio(0);
    cin.tie(0);
-   cin>>s;
+   cin >> s;
    Compute();
-   cout<<s<<endl;
+   cout << s << endl;
    return 0;
 }
