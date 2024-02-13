@@ -18,7 +18,7 @@ int main() {
 
         std::getline(std::cin,s);
 
-        if (t % 2==0)
+        if (t % 2 == 0)
             x = t * 3;
         else
             x = -5 * t;
